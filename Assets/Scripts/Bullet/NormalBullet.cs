@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NormalBullet : BulletBase
 {
-    private void OnCollisionEnter(Collision other)
+    protected override void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag=="Enemy")
         {

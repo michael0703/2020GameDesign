@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GlobalVar : MonoBehaviour
 {
-    public int numOfBullet = 6;
-    public int [] numOfMaxBullet = {2,1,1,1,1,5};
+    // This class storing gloval var
+    public int numOfSkillType = 6;
+    public int [] numOfBulletInSkill = {2,1,1,1,1,5};
 
     // 0: line of slow
     // 1: scarecrow

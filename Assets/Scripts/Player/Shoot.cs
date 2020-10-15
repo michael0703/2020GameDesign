@@ -4,79 +4,71 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    //This class describe how a bullet is created.
-    public float shootingTime = 0.1f;
-    public float shootingTimeSp = 0.1f;
-    public GameObject normalBulletPrefab;
-    public GameObject [] specialBulletPrefab;
-    public int index = 0;
+    //This class create bullet.
+    public GameObject bulletPrefab;
+    public float intervalOfShooting = 0.1f;
+    public GameObject [] bulletPrefabSp;
+    public float [] intervalOfShootingSp = {0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f};
+    
+    public int currentSkillType = 0;
 
-    private int [] ids;
-    private float timeCounting;
-    private float timeCountingSp;
-    private GameObject bulletManager;
-    private GameObject myGrandParent;
+    private float timeCounting = 0;
+    private float [] timeCountingSp = {0, 0, 0, 0, 0, 0};
+    private int numOfSkillType;
+    private GameObject skillManager;
+    private GameObject mainCamera;
     void Start()
     {
-        int numOfBullet = GameObject.Find("GlobalVar").GetComponent<GlobalVar>().numOfBullet;
-        ids = new int [numOfBullet]; 
-        for(int i=0; i<numOfBullet; i++)
-            ids[i]=0;
-        timeCounting = 0;
-        timeCountingSp = 0;
-        bulletManager = GameObject.Find("BulletManager");
-        //gameObject:Gun
-        GameObject myParent = transform.parent.gameObject;
-        //gameObject:MainCamera
-        myGrandParent = myParent.transform.parent.gameObject;
+        numOfSkillType = GameObject.Find("GlobalVar").GetComponent<GlobalVar>().numOfSkillType;
+        skillManager = GameObject.Find("SkillManager");
+        GameObject gun = transform.parent.gameObject;
+        mainCamera = gun.transform.parent.gameObject;
     }
     void Update()
     {
         timeCounting -= Time.deltaTime;
-        timeCountingSp -= Time.deltaTime;
+        for(int i=0; i<numOfSkillType; i++)
+            timeCountingSp[i] -= Time.deltaTime;
         
-        // special bullet
-        if(Input.GetMouseButtonDown(1) && timeCountingSp<=0)
+        // shoot special bullet
+        if(Input.GetMouseButtonDown(1) && timeCountingSp[currentSkillType]<=0)
         {
-            GameObject specialBullet = (GameObject)Instantiate(specialBulletPrefab[index],transform.position,myGrandParent.transform.rotation);
-            specialBullet.GetComponent<BulletBase>().index = index;
-            specialBullet.GetComponent<BulletBase>().id = ids[index];
-            ids[index]++;
-            bulletManager.GetComponent<BulletManager>().RegistBullet(index,specialBullet);
-            timeCountingSp = shootingTimeSp;
+            GameObject specialBullet = (GameObject)Instantiate(bulletPrefabSp[currentSkillType],transform.position,mainCamera.transform.rotation);
+            skillManager.GetComponent<SkillManager>().RegistBullet(specialBullet);
+            timeCountingSp[currentSkillType] = intervalOfShootingSp[currentSkillType];
         }
 
-        // normal bullet
+        // shoot normal bullet
         if(Input.GetMouseButtonDown(0) && timeCounting<=0)
         {
-            Instantiate(normalBulletPrefab,transform.position,myGrandParent.transform.rotation);
-            timeCounting = shootingTime;
+            Instantiate(bulletPrefab,transform.position,mainCamera.transform.rotation);
+            timeCounting = intervalOfShooting;
         }
 
-        // change special bullet
+        // change currentSkillType
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            index = 0;
+            currentSkillType = 0;
         }
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
-            index = 1;
+            currentSkillType = 1;
         }
         if(Input.GetKeyDown(KeyCode.Alpha3))
         {
-            index = 2;
+            currentSkillType = 2;
         }
         if(Input.GetKeyDown(KeyCode.Alpha4))
         {
-            index = 3;
+            currentSkillType = 3;
         }
         if(Input.GetKeyDown(KeyCode.Alpha5))
         {
-            index = 4;
+            currentSkillType = 4;
         }
         if(Input.GetKeyDown(KeyCode.Alpha6))
         {
-            index = 5;
+            currentSkillType = 5;
         }
         
     }

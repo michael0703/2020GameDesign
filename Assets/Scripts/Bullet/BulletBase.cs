@@ -4,26 +4,34 @@ using UnityEngine;
 
 public class BulletBase : MonoBehaviour
 {
-    public float speed_forward = 5f;
-    public float speed_upward = 0f;
-    public float force_forward = 0f;
-    public float force_upward = 0f;
+    public float speedForward = 5f;
+    public float speedUpward = 0f;
+    public float forceForward = 0f;
+    public float forceUpward = 0f;
     public int damage = 5;
-    public int index = -1;
-    public int id;
-
+    public int skillType = -1;
+    public bool isReady = false;
+    protected GameObject skill;
     protected Rigidbody rb;
-    protected GameObject bulletManager;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = speed_forward * transform.forward + speed_upward * transform.up;
-        rb.AddForce(force_forward * transform.forward + force_upward * transform.up);
-        bulletManager = GameObject.Find("BulletManager");
+        rb.velocity = speedForward * transform.forward + speedUpward * transform.up;
+        rb.AddForce(forceForward * transform.forward + forceUpward * transform.up);
     }
 
-    protected GameObject [] GetBullets(int num)
+    public void AttachToSkill(GameObject _skill)
     {
-        return bulletManager.GetComponent<BulletManager>().GetBullets(index, num);
+        skill = _skill;
+    }
+
+    protected virtual void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag=="Wall")
+        {
+            isReady = true;
+            skill.GetComponent<SkillBase>().CheckBulletAreReady();
+            rb.velocity = Vector3.zero;
+        }
     }
 }
