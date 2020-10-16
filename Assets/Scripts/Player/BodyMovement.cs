@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class BodyMovement : MonoBehaviour
 {
-    //This class describe how player move
+    //This class move whole player
     public float speed = 5f;
     public bool isGrounded = true;
     public float jumpForce = 5f;
-    public float jumpDetect = 0.1f;
     private Rigidbody rb;
 
     void Start()

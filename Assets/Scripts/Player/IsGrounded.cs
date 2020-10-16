@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class IsGrounded : MonoBehaviour
 {
-    private GameObject grandParent;
+    // This class detect ground
+    private GameObject player;
     void Start()
     {
-        grandParent = transform.parent.gameObject.transform.parent.gameObject;
+        player = transform.parent.gameObject.transform.parent.gameObject;
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag=="Wall")
         {
-            grandParent.GetComponent<BodyMovement>().isGrounded = true;
+            player.GetComponent<BodyMovement>().isGrounded = true;
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if(other.gameObject.tag=="Wall")
         {
-            grandParent.GetComponent<BodyMovement>().isGrounded = false;
+            player.GetComponent<BodyMovement>().isGrounded = false;
         }
     }
 }
