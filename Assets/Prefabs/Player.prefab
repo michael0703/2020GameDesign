@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50cf62cce79ccc047a9c191c00fcf06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 450
+  mouseSensitivity: 500
   player: {fileID: 8656129136155908369}
 --- !u!1 &8656129136055261076
 GameObject:
@@ -585,13 +585,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8bcf3b58e1c404a9eefacfb0d679f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingTime: 0.2
-  shootingTimeSp: 0.1
-  normalBulletPrefab: {fileID: 4566687420999752768, guid: eb065f882c8813440a213c1eff5d3c12,
+  bulletPrefab: {fileID: 4566687420999752768, guid: eb065f882c8813440a213c1eff5d3c12,
     type: 3}
-  specialBulletPrefab:
-  - {fileID: 4566687420999752768, guid: e02784f5c80d2a34ca89f0bc8e93a72b, type: 3}
-  index: 0
+  intervalOfShooting: 0.1
+  bulletPrefabSp:
+  - {fileID: 4566687420999752768, guid: 7870171f6a72b0649bc3e1fbebc7076a, type: 3}
+  - {fileID: 4566687420999752768, guid: c964e69299ab608408bd0d6ffd44a620, type: 3}
+  - {fileID: 4566687420999752768, guid: f8b47806e5132664f90dae75be76ed46, type: 3}
+  - {fileID: 4566687420999752768, guid: c4e378421a577f844b3d14d33f814613, type: 3}
+  - {fileID: 4566687420999752768, guid: 2e8c8f46949210643b3c6b0fbea696e8, type: 3}
+  - {fileID: 4566687420999752768, guid: a7d99fe6caa63dc47b395323d837abe0, type: 3}
+  intervalOfShootingSp:
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  - 0.1
+  currentSkillType: 0
 --- !u!1 &8656129136836956353
 GameObject:
   m_ObjectHideFlags: 0

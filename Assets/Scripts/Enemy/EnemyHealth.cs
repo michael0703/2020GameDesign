@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    //This class describe the health system of monsters.
-    public int health = 100;
+    // Health system of monster
+    public int startHealth = 100;
     private int currentHealth;
 
     public void  GetHurt(int damage){
@@ -17,7 +17,7 @@ public class EnemyHealth : MonoBehaviour
     }
     void Start()
     {
-        currentHealth = health;
+        currentHealth = startHealth;
     }
 
 
