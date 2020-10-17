@@ -27,6 +27,7 @@ public class SkillManager : MonoBehaviour
         int type = bullet.GetComponent<BulletBase>().skillType;
         if(skillList[type].GetComponent<SkillBase>().AddBullet(bullet))
         {
+
             skillList[type] = (GameObject)Instantiate(skillPrefabs[type],transform);
             skillList[type].GetComponent<SkillBase>().ResetSkill(numOfBulletInSkill[type]);
         }
