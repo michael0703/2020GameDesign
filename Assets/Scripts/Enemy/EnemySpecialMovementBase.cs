@@ -6,12 +6,17 @@ public class EnemySpecialMovementBase : MonoBehaviour
 {
     //This class describe how enemy move after detecting player.
     public bool detectPlayer = false;
+    protected GameObject player;
 
+    protected virtual void Start()
+    {
+        player = GameObject.Find("Player");
+    }
     protected virtual void specialMove()
     {
 
     }
-    private void Update()
+    void Update()
     {
         if(detectPlayer)
         {

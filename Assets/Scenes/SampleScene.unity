@@ -2198,6 +2198,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5195630150118346071, guid: 4a74c8a9999e4e6409bc80e32b33d8fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195630150118346071, guid: 4a74c8a9999e4e6409bc80e32b33d8fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195630151233597933, guid: 4a74c8a9999e4e6409bc80e32b33d8fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a74c8a9999e4e6409bc80e32b33d8fc, type: 3}
 --- !u!1001 &8656129136822664213
