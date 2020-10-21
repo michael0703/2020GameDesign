@@ -14,5 +14,15 @@ public class Skill5 : SkillBase
             bullets[i].GetComponent<SpecialBullet5>().isWaitingToActivate = true;
         }
     }
-
+    void Update(){
+        bool flag = true;
+        for(int i=0 ;i<bullets.Length; i++){
+            if (bullets[i] == null || !bullets[i].GetComponent<SpecialBullet5>().isReadyToDie){
+                flag = false;
+            }
+        }
+        if(flag){
+            DestroySkill();
+        }
+    }
 }

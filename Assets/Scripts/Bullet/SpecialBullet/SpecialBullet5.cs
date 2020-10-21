@@ -9,12 +9,18 @@ public class SpecialBullet5 : BulletBase
     private LineRenderer lineRenderer;
     private GameObject player;
     public bool isWaitingToActivate = false;
+    public bool isReadyToDie = false;
 
     protected override void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag=="Enemy")
-        {
-            Debug.Log("This is Skill 5 Hit Enemy, will do no damage");
+        {   
+            if(!isWaitingToActivate){
+                Debug.Log("This is Skill 5 Hit Enemy, will do no damage");
+            }
+            else{
+                other.gameObject.transform.parent.GetComponent<EnemyHealth>().GetHurt(damage * 4);
+            }
         }
         if(other.gameObject.tag=="Wall")
         {
@@ -32,9 +38,9 @@ public class SpecialBullet5 : BulletBase
             
         }
         if(other.gameObject.tag=="Player"){
-            Debug.Log("Destroy");
             rb.velocity = Vector3.zero;
-            Object.Destroy(this.gameObject);
+            Object.Destroy(trackingRay);
+            isReadyToDie = true;
         }
     }
     public void Update(){
