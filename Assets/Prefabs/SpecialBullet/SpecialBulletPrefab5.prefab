@@ -123,10 +123,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b7b855761ccff44b98842f3b0b820e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedForward: 5
+  speedForward: 10
   speedUpward: 0
   forceForward: 0
   forceUpward: 0
   damage: 5
   skillType: 5
   isReady: 0
+  trackingRayPrefab: {fileID: 807017845189175145, guid: 7fabce5cd2eec44ea8126146eb238a8d,
+    type: 3}

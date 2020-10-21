@@ -11,5 +11,6 @@ public class Skill1 : SkillBase
            GameObject scareCrow = (GameObject)Instantiate(scareCrowPrefab);
            scareCrow.transform.position = bullets[0].transform.position;
 
+           DestroySkill();
     }
 }
