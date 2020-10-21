@@ -8,6 +8,7 @@ public class SpecialBullet5 : BulletBase
     private GameObject trackingRay;
     private LineRenderer lineRenderer;
     private GameObject player;
+    public bool isWaitingToActivate = false;
 
     protected override void OnTriggerEnter(Collider other)
     {
@@ -17,16 +18,24 @@ public class SpecialBullet5 : BulletBase
         }
         if(other.gameObject.tag=="Wall")
         {
+
             isReady = true;
             skill.GetComponent<SkillBase>().CheckBulletAreReady();
-            rb.velocity = Vector3.zero;
+            if(!isWaitingToActivate){
+                rb.velocity = Vector3.zero;
+            }
             trackingRay = (GameObject)Instantiate(trackingRayPrefab);
             player = GameObject.Find("/Player/MainCamera/Gun");
             lineRenderer = trackingRay.GetComponent<LineRenderer>();
             lineRenderer.SetPosition(0, this.gameObject.transform.position);
             lineRenderer.SetPosition(1, player.transform.position);
+            
         }
-        
+        if(other.gameObject.tag=="Player"){
+            Debug.Log("Destroy");
+            rb.velocity = Vector3.zero;
+            Object.Destroy(this.gameObject);
+        }
     }
     public void Update(){
         if (trackingRay){
