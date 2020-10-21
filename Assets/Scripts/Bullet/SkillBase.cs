@@ -27,7 +27,7 @@ public class SkillBase : MonoBehaviour
         return false;
     }
 
-    private void DestroySkill()
+    public void DestroySkill()
     {
         for(int i=0; i<numOfBulletInSkill; i++)
         {
@@ -49,7 +49,7 @@ public class SkillBase : MonoBehaviour
         if(flag)
         {
             ActivateSkill();
-            DestroySkill();
+            // DestroySkill();
         }
     }
     protected virtual void ActivateSkill()

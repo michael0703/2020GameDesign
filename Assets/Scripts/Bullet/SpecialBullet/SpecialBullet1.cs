@@ -8,7 +8,7 @@ public class SpecialBullet1 : BulletBase
     {
         if(other.gameObject.tag=="Enemy")
         {
-            other.gameObject.GetComponent<EnemyHealth>().GetHurt(damage);
+            Debug.Log("This is Skill 1 Hit Enemy, will do no damage");
         }
         if(other.gameObject.tag=="Wall")
         {
