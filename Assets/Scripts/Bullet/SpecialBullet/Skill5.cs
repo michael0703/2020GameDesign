@@ -10,7 +10,7 @@ public class Skill5 : SkillBase
         player = GameObject.Find("/Player/MainCamera/Gun");
         for(int i = 0; i < bullets.Length; i++){
             Vector3 velocity = player.transform.position - bullets[i].gameObject.transform.position;
-            bullets[i].GetComponent<Rigidbody>().velocity = velocity;
+            bullets[i].GetComponent<Rigidbody>().velocity = velocity * 3f;
             bullets[i].GetComponent<SpecialBullet5>().isWaitingToActivate = true;
         }
     }
@@ -22,6 +22,9 @@ public class Skill5 : SkillBase
             }
         }
         if(flag){
+            for(int i=0; i<bullets.Length; i++){
+                Object.Destroy(bullets[i].GetComponent<SpecialBullet5>().trackingRay);
+            }
             DestroySkill();
         }
     }
