@@ -1955,7 +1955,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2141821774
@@ -2256,6 +2256,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1300869647}
     m_Modifications:
+    - target: {fileID: 3623522415492260487, guid: 4a74c8a9999e4e6409bc80e32b33d8fc,
+        type: 3}
+      propertyPath: isMovable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5195630150118346062, guid: 4a74c8a9999e4e6409bc80e32b33d8fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2355,6 +2360,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DummyEnemyPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 2199276803841867579, guid: 64f9c281cd3c9444bac2926f313f8b30,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2199276803842351835, guid: 64f9c281cd3c9444bac2926f313f8b30,
         type: 3}

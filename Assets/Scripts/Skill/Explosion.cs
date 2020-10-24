@@ -18,18 +18,23 @@ public class Explosion : MonoBehaviour
     {
         for (int i = 0; i < times; i++)
         {
-            Instantiate(ExplosionEffectPrefab, transform.position, transform.rotation);
+            GameObject explosionEffect=Instantiate(ExplosionEffectPrefab, transform.position, transform.rotation);
+            Destroy(explosionEffect, 0.5f);
 
 
             Collider[] colliders=Physics.OverlapSphere(transform.position, 5);
             foreach(Collider collider in colliders)
             {
-                if (collider.tag == "enemy")
+                if (collider.gameObject.tag == "Enemy")
                 {
                     Vector3 blownDirection = collider.transform.position -transform.position;
-                    //if(collider.gameObject.GetComponent<EnemyState>().isMovable)
-                        collider.gameObject.GetComponent<Rigidbody>().AddForce(blownDirection*100);
-                    collider.gameObject.GetComponent<EnemyHealth>().GetHurt(100);
+                    Debug.Log(collider.transform);
+                    if (collider.transform.parent.GetComponent<EnemyState>().isMovable)
+                    {
+                        collider.transform.parent.GetComponent<Rigidbody>().AddForce(blownDirection.normalized * 300);
+                        Debug.Log("move");
+                    }
+                    collider.transform.parent.GetComponent<EnemyHealth>().GetHurt(5);
 
 
                 };
@@ -39,6 +44,7 @@ public class Explosion : MonoBehaviour
 
             yield return new WaitForSeconds(0.5f);
         }
+        Destroy(gameObject);
 
 
     }

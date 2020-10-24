@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class SpecialBullet2 : BulletBase
 {
-
-    protected void OnColliderEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
 
-
-
-
-        if(other.gameObject.tag=="Floor")
+        if (collision.gameObject.tag == "Floor")
         {
+
             isReady = true;
             rb.velocity = Vector3.zero;
             skill.GetComponent<SkillBase>().CheckBulletAreReady();
-            
+
         }
-        
+
+
     }
+
 }
