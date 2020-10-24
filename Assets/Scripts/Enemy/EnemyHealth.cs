@@ -10,8 +10,9 @@ public class EnemyHealth : MonoBehaviour
 
     public void  GetHurt(int damage){
         currentHealth -= damage;
+        Debug.Log("current" + " " + currentHealth);
         if(currentHealth <= 0)
-        {
+        {   
             Destroy(gameObject);
         }
     }

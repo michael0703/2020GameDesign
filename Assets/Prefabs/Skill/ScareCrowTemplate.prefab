@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5088331124081779611}
   m_Layer: 0
   m_Name: ScareCrowTemplate
-  m_TagString: Untagged
+  m_TagString: Scarecrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,3 +93,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655b7c439573a4265aecd08217709cd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InstantiateTime: 0

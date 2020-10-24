@@ -6,15 +6,12 @@ public class SpecialBullet0 : BulletBase
 {
     protected override void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag=="Enemy")
+        if(other.gameObject.tag=="Wall" || other.gameObject.tag=="Floor")
         {
-            other.gameObject.GetComponent<EnemyHealth>().GetHurt(damage);
-        }
-        if(other.gameObject.tag=="Wall")
-        {
+            rb.velocity = Vector3.zero;
             isReady = true;
             skill.GetComponent<SkillBase>().CheckBulletAreReady();
-            rb.velocity = Vector3.zero;
+            
         }
         
     }

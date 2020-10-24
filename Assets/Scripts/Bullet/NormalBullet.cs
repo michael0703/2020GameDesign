@@ -11,7 +11,7 @@ public class NormalBullet : BulletBase
             other.gameObject.transform.parent.gameObject.GetComponent<EnemyHealth>().GetHurt(damage);
             Destroy(gameObject);
         }
-        else if(other.gameObject.tag=="Wall")
+        else if(other.gameObject.tag=="Wall" || other.gameObject.tag=="Floor")
         {
             Destroy(gameObject);
         }

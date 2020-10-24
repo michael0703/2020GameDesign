@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullets: []
   skillType: 4
+  targetPrefab: {fileID: 7900491544681966957, guid: 04eec5a2623fac54bb01b6dc8ece7d30,
+    type: 3}
