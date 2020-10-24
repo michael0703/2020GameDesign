@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class SpecialBullet3 : BulletBase
 {
-    protected override void OnTriggerEnter(Collider other)
+    private float activateCountDown = 1f;
+    private void Update()
     {
-        if(other.gameObject.tag=="Enemy")
-        {
-            other.gameObject.GetComponent<EnemyHealth>().GetHurt(damage);
-        }
-        if(other.gameObject.tag=="Wall")
+
+        activateCountDown -= Time.deltaTime;
+        if (activateCountDown<=0)
         {
             isReady = true;
-            skill.GetComponent<SkillBase>().CheckBulletAreReady();
             rb.velocity = Vector3.zero;
+            skill.GetComponent<SkillBase>().CheckBulletAreReady();
         }
-        
+    }
+
+
+    protected override void OnTriggerEnter(Collider other)
+    {
+
     }
 }

@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Skill2 : SkillBase
 {
+
+
+    public GameObject ExplosionPrefab;
     protected override void ActivateSkill()
     {
-        Debug.Log("I have " + bullets.Length.ToString() + " bullets!");   
+        Instantiate(ExplosionPrefab, bullets[0].transform.position, bullets[0].transform.rotation);
+        Destroy(bullets[0]);
+        Destroy(gameObject);
     }
+
 }
