@@ -43,5 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff69ccaf787118429d02b97c0c55182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullets: []
+  bullets:
+  - {fileID: 2664136449372435851, guid: a6a9b39859b264262a5e168c649f1cd9, type: 3}
   skillType: 3
+  shieldPrefab: {fileID: 734077426741347996, guid: 104637fb788f44168894a1b0f6911f23,
+    type: 3}

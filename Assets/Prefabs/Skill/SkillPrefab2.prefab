@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullets: []
   skillType: 2
+  ExplosionPrefab: {fileID: 804763049324276212, guid: b816d1cdf63a54d8baacf24a7db9fae7,
+    type: 3}
