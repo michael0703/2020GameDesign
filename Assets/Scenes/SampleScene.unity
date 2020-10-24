@@ -1939,7 +1939,7 @@ GameObject:
   - component: {fileID: 2141821773}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Wall
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2235,6 +2235,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkillManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4912718668770010467, guid: 2614f2505bc37aa408f75f6f0ea728cf,
+        type: 3}
+      propertyPath: skillPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 296955512318785896, guid: 20bfd2d0ff37a4838b3385fe3ff0fd9c,
+        type: 3}
+    - target: {fileID: 4912718668770010467, guid: 2614f2505bc37aa408f75f6f0ea728cf,
+        type: 3}
+      propertyPath: skillPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 296955512318785896, guid: 6cca2329f29de4b9ab40c67cb1f3fa60,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2614f2505bc37aa408f75f6f0ea728cf, type: 3}
 --- !u!1001 &5195630151575285656
@@ -2474,5 +2486,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8656129136587173804, guid: 8dc8b13e38ce6754b8f4c20c21cc3220,
+        type: 3}
+      propertyPath: bulletPrefabSp.Array.data[3]
+      value: 
+      objectReference: {fileID: 2664136449372435851, guid: a6a9b39859b264262a5e168c649f1cd9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dc8b13e38ce6754b8f4c20c21cc3220, type: 3}

@@ -9,6 +9,7 @@ TagManager:
   - NormalBullet
   - Scarecrow
   - EnemyShield
+  - Floor
   layers:
   - Default
   - TransparentFX
