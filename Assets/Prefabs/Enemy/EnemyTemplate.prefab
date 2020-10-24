@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 5195630150118346057}
   - component: {fileID: 2144100638452436001}
   - component: {fileID: 1612462319}
+  - component: {fileID: 3623522415492260487}
   m_Layer: 0
   m_Name: EnemyTemplate
   m_TagString: Enemy
@@ -185,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   detectPlayer: 0
+  detectScareCrow: 0
 --- !u!114 &1612462319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +200,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectPlayer: 0
+  detectScareCrow: 0
+--- !u!114 &3623522415492260487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5195630150118346071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e502ce7e172cf4442b19de3106c133f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  slowArgument: 0.5
 --- !u!1 &5195630151233597933
 GameObject:
   m_ObjectHideFlags: 0
