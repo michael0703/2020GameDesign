@@ -5,6 +5,7 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     public float lastingTime = 5f;
+
     private GameObject bombArea;
     private float counting;
 

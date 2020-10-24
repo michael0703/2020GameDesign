@@ -27,7 +27,7 @@ public class BulletBase : MonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag=="Wall")
+        if(other.gameObject.tag=="Wall" || other.gameObject.tag=="Floor")
         {
             isReady = true;
             skill.GetComponent<SkillBase>().CheckBulletAreReady();

@@ -10,7 +10,7 @@ public class SpecialBulletTemplate : BulletBase
         {
             other.gameObject.GetComponent<EnemyHealth>().GetHurt(damage);
         }
-        if(other.gameObject.tag=="Wall")
+        if(other.gameObject.tag=="Wall" || other.gameObject.tag=="Floor")
         {
             isReady = true;
             skill.GetComponent<SkillBase>().CheckBulletAreReady();

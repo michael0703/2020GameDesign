@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     //random walk
     public float speed = 1f;
     public bool detectPlayer = false;
+    public bool detectScareCrow = false;
 
     private Rigidbody rb;
     private float timeCount = 0;
@@ -18,7 +19,7 @@ public class EnemyMovement : MonoBehaviour
     }
     void Update()
     {
-        if(!detectPlayer)
+        if(!detectPlayer && !detectScareCrow)
         {
             timeCount -= Time.deltaTime;
             if(timeCount <= 0)

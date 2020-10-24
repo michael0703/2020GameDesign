@@ -24,7 +24,7 @@ public class SlowLine : MonoBehaviour
     {
         if(other.gameObject.tag=="Enemy")
         {
-            //other.gameObject.GetComponent<EnemySpecialMovementBase>().SlowDown(effectTime);
+            other.gameObject.GetComponent<EnemyState>().SlowDown(effectTime);
         }
     }
 }
