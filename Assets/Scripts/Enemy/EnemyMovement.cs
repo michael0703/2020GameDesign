@@ -13,9 +13,12 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody rb;
     private float timeCount = 0;
     private Vector3 movePattern;
+    float rotateSpeed = 0.8f;
+    Quaternion qTo;
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        qTo = Quaternion.Euler(new Vector3(0f,Random.Range(-180f, 180f), 0f));
     }
     void Update()
     {
@@ -24,9 +27,11 @@ public class EnemyMovement : MonoBehaviour
             timeCount -= Time.deltaTime;
             if(timeCount <= 0)
             {
-                timeCount = Random.Range(0, 2f);
+                timeCount = 2f;
                 movePattern = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f));
+                qTo = Quaternion.Euler(new Vector3(0f,Random.Range(-180f, 180f), 0f));
             }
+            transform.rotation = Quaternion.Slerp(transform.rotation, qTo, Time.deltaTime * rotateSpeed);
             rb.MovePosition(transform.position + movePattern * speed * Time.deltaTime);
         }
         
