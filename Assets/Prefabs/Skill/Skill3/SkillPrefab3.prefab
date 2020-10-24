@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 296955512318785898}
-  - component: {fileID: 4626439304552739363}
+  - component: {fileID: 3489662301093884513}
   m_Layer: 0
   m_Name: SkillPrefab3
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4626439304552739363
+--- !u!114 &3489662301093884513
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullets: []
   skillType: 3
+  shieldPrefab: {fileID: 734077426741347996, guid: 104637fb788f44168894a1b0f6911f23,
+    type: 3}

@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 296955512318785898}
-  - component: {fileID: 4626439304552739363}
+  - component: {fileID: 3397193314330523273}
   m_Layer: 0
-  m_Name: SkillPrefab3
+  m_Name: SkillPrefab2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4626439304552739363
+--- !u!114 &3397193314330523273
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,11 +40,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 296955512318785896}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ff69ccaf787118429d02b97c0c55182, type: 3}
+  m_Script: {fileID: 11500000, guid: c2c024032c5560e4b8af6d657a9811e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullets:
-  - {fileID: 2664136449372435851, guid: a6a9b39859b264262a5e168c649f1cd9, type: 3}
-  skillType: 3
-  shieldPrefab: {fileID: 734077426741347996, guid: 104637fb788f44168894a1b0f6911f23,
+  bullets: []
+  skillType: 2
+  ExplosionPrefab: {fileID: 804763049324276212, guid: b816d1cdf63a54d8baacf24a7db9fae7,
     type: 3}

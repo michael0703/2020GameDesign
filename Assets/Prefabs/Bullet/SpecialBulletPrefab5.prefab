@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4566687420999752782}
   - component: {fileID: 4566687420999752769}
   - component: {fileID: 7649361701738678771}
-  - component: {fileID: -6022428875135259351}
+  - component: {fileID: -1898174801219689408}
   m_Layer: 0
-  m_Name: SpecialBulletPrefab3
+  m_Name: SpecialBulletPrefab5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: db3de97655e88bd4da4bdb71f233ccc5, type: 2}
+  - {fileID: 2100000, guid: 17ee3d01afdc07042985e0201451ed1b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,7 +111,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-6022428875135259351
+--- !u!114 &-1898174801219689408
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,13 +120,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4566687420999752768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96460eaf1df468e4fb02fa0a57aad593, type: 3}
+  m_Script: {fileID: 11500000, guid: 61b7b855761ccff44b98842f3b0b820e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedForward: 5
+  speedForward: 10
   speedUpward: 0
   forceForward: 0
   forceUpward: 0
   damage: 5
-  skillType: 3
+  skillType: 5
   isReady: 0
+  trackingRayPrefab: {fileID: 807017845189175145, guid: 7fabce5cd2eec44ea8126146eb238a8d,
+    type: 3}
+  trackingRay: {fileID: 0}
+  lineRenderer: {fileID: 0}
+  isWaitingToActivate: 0
+  isReadyToDie: 0
