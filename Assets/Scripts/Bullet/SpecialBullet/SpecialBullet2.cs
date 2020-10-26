@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SpecialBullet2 : BulletBase
 {
-    private void OnCollisionEnter(Collision collision)
+    protected override void OnTriggerEnter(Collider collision)
     {
 
-        if (collision.gameObject.tag == "Floor")
+        if (collision.gameObject.tag == "Floor" || collision.gameObject.tag=="Wall")
         {
 
             isReady = true;

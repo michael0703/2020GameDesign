@@ -27,14 +27,16 @@ public class Explosion : MonoBehaviour
             {
                 if (collider.gameObject.tag == "Enemy")
                 {
-                    Vector3 blownDirection = collider.transform.position -transform.position;
-                    Debug.Log(collider.transform);
+
+                    Debug.Log("damage by explosion.");
+                    collider.transform.parent.GetComponent<EnemyHealth>().GetHurt(5);
+
                     if (collider.transform.parent.GetComponent<EnemyState>().isMovable)
                     {
-                        collider.transform.parent.GetComponent<Rigidbody>().AddForce(blownDirection.normalized * 300);
                         Debug.Log("move");
+                        Vector3 blownDirection = collider.transform.position - transform.position;
+                        collider.transform.parent.GetComponent<Rigidbody>().AddForce(blownDirection.normalized * 300);
                     }
-                    collider.transform.parent.GetComponent<EnemyHealth>().GetHurt(5);
 
 
                 };
