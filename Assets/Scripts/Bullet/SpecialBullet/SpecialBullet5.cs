@@ -22,7 +22,7 @@ public class SpecialBullet5 : BulletBase
                 other.gameObject.transform.parent.GetComponent<EnemyHealth>().GetHurt(damage * 4);
             }
         }
-        if(other.gameObject.tag=="Wall")
+        if(other.gameObject.tag=="Wall" || other.gameObject.tag=="Floor" )
         {
 
             isReady = true;
