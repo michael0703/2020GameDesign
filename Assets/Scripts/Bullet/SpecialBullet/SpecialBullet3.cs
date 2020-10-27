@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpecialBullet3 : BulletBase
 {
-    private float activateCountDown = 1f;
+    private float activateCountDown = 0.5f;
     private void Update()
     {
 
@@ -20,6 +20,6 @@ public class SpecialBullet3 : BulletBase
 
     protected override void OnTriggerEnter(Collider other)
     {
-
+        //override to do nothing.
     }
 }

@@ -11,8 +11,7 @@ public class Skill3 : SkillBase
     {
 
         Instantiate(shieldPrefab, bullets[0].transform.position, bullets[0].transform.rotation);
-        Destroy(bullets[0]);
-        Destroy(gameObject);
+        DestroySkill();
 
 
     }
