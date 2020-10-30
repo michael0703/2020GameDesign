@@ -46,7 +46,7 @@ MonoBehaviour:
   skillPrefabs:
   - {fileID: 296955512318785896, guid: 99bc4bead0e02704bb2f6c4083c0deb1, type: 3}
   - {fileID: 296955512318785896, guid: 58f7a81696c60724b95ad7419a24d6fe, type: 3}
-  - {fileID: 296955512318785896, guid: ecea3bfb834a35d4aa3685c634284170, type: 3}
-  - {fileID: 296955512318785896, guid: e2f8eaa67d21c054581a916cbd94e8a1, type: 3}
+  - {fileID: 296955512318785896, guid: 20bfd2d0ff37a4838b3385fe3ff0fd9c, type: 3}
+  - {fileID: 296955512318785896, guid: 6cca2329f29de4b9ab40c67cb1f3fa60, type: 3}
   - {fileID: 296955512318785896, guid: 79f842141ef083d46b64294a24160b97, type: 3}
   - {fileID: 296955512318785896, guid: f605a740e803ede42ba32939a7847ae8, type: 3}

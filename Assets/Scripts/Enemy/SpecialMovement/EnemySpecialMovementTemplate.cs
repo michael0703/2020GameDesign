@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpecialMovementTemplate : EnemySpecialMovementBase
 {
-    protected override void specialMove()
+    protected override void specialMove(GameObject target)
     {
 
     }

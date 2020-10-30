@@ -8,18 +8,18 @@ public class IsGrounded : MonoBehaviour
     private GameObject player;
     void Start()
     {
-        player = transform.parent.gameObject.transform.parent.gameObject;
+        player = transform.parent.gameObject;
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag=="Wall")
+        if(other.gameObject.tag=="Floor")
         {
             player.GetComponent<BodyMovement>().isGrounded = true;
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag=="Wall")
+        if(other.gameObject.tag=="Floor")
         {
             player.GetComponent<BodyMovement>().isGrounded = false;
         }

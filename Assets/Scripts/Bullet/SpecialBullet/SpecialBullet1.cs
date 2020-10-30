@@ -9,7 +9,7 @@ public class SpecialBullet1 : BulletBase
     {
         if(other.gameObject.tag=="Enemy")
         {
-            Debug.Log("This is Skill 1 Hit Enemy, will do no damage");
+            //Debug.Log("This is Skill 1 Hit Enemy, will do no damage");
         }
         if(other.gameObject.tag=="Wall" || other.gameObject.tag=="Floor" )
         {   

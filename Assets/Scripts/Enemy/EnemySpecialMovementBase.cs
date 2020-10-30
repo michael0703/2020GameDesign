@@ -7,23 +7,33 @@ public class EnemySpecialMovementBase : MonoBehaviour
     //This class describe how enemy move after detecting player.
     public bool detectPlayer = false;
     public bool detectScareCrow = false;
-    protected GameObject player;
+    public GameObject player;
+    public GameObject scareCrow;
+    public float speed = 1f;
     protected Rigidbody rb;
 
     protected virtual void Start()
     {
-        player = GameObject.Find("Player");
         rb = gameObject.GetComponent<Rigidbody>();
     }
-    protected virtual void specialMove()
+    protected virtual void specialMove(GameObject target)
     {
 
     }
     void Update()
     {
-        if(detectPlayer && !detectScareCrow)
+        if(detectScareCrow==true && scareCrow==null)
         {
-            specialMove();
+            detectScareCrow=false;
+            gameObject.GetComponent<EnemyMovement>().detectScareCrow = false;
+        }
+        if(detectScareCrow)
+        {
+            specialMove(scareCrow);
+        }
+        else if(detectPlayer)
+        {
+            specialMove(player);
         }
     }
 }

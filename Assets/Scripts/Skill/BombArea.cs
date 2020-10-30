@@ -9,7 +9,7 @@ public class BombArea : MonoBehaviour
     {
         if(other.gameObject.tag == "Enemy")
         {
-            other.gameObject.transform.parent.gameObject.GetComponent<EnemyHealth>().GetHurt(damage);
+            other.gameObject.GetComponent<EnemyHealth>().GetHurt(damage);
         }
     }
 }

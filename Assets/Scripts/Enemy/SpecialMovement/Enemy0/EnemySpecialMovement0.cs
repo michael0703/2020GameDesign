@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class EnemySpecialMovement0 : EnemySpecialMovementBase
 {
-    public float speed = 1f;
-    public float speedDash = 15f;
+    public float dashFactor = 15f;
     public float rotateSpeed = 10f;
     public float chargingTime = 2f;
     public float dashingTime = 0.5f;
@@ -17,18 +16,18 @@ public class EnemySpecialMovement0 : EnemySpecialMovementBase
     private float dashingTimeCounting = 0;
     private float coolingTimeCounting = 0;
     private Vector3 playerOldPos;
-    protected override void specialMove()
+    protected override void specialMove(GameObject target)
     {
         if(state==0) // aproaching player
         {
-            lookAtPlayer(player);
+            lookAtPlayer(target);
             rb.velocity = speed * transform.forward;
             if(playerInSight) 
             {
                 state = 1;
                 rb.velocity = new Vector3(0,0,0);
                 turnOnWarning();
-                playerOldPos = player.transform.position;
+                playerOldPos = target.transform.position;
             }
 
         }
@@ -40,7 +39,7 @@ public class EnemySpecialMovement0 : EnemySpecialMovementBase
             {
                 chargingTimeCounting = 0;
                 state = 2;
-                rb.velocity = speedDash * transform.forward;
+                rb.velocity = dashFactor * speed * transform.forward;
             }
 
         }

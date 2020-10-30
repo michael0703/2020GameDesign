@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DetectPlayer : MonoBehaviour
 {
-    GameObject enemy;
+    private GameObject enemy;
 
     private void Start()
     {
@@ -16,12 +16,23 @@ public class DetectPlayer : MonoBehaviour
         {
             enemy.GetComponent<EnemyMovement>().detectPlayer = true;
             enemy.GetComponent<EnemySpecialMovementBase>().detectPlayer = true;
+            enemy.GetComponent<EnemySpecialMovementBase>().player = other.gameObject;
             
         }
         if(other.gameObject.tag=="Scarecrow")
         {
             enemy.GetComponent<EnemyMovement>().detectScareCrow = true;
             enemy.GetComponent<EnemySpecialMovementBase>().detectScareCrow = true;
+            enemy.GetComponent<EnemySpecialMovementBase>().scareCrow = other.gameObject;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag=="Scarecrow")
+        {
+            enemy.GetComponent<EnemyMovement>().detectScareCrow = false;
+            enemy.GetComponent<EnemySpecialMovementBase>().detectScareCrow = false;
+            enemy.GetComponent<EnemySpecialMovementBase>().scareCrow = null;
         }
     }
 }

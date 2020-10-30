@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class ScareCrow : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float InstantiateTime;
+    public float lastingTime = 3f;
+    private float InstantiateTime;
     void Start()
     {
-        
+        InstantiateTime = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         InstantiateTime += Time.deltaTime;
-        if (InstantiateTime > 3){
+        if (InstantiateTime > lastingTime){
             Object.Destroy(this.gameObject);
         }
         

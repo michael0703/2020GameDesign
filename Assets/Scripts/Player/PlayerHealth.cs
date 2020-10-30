@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void  GetHurt(int damage){
         currentHealth -= damage;
+        Debug.Log("Player health: " + currentHealth);
         if(currentHealth <= 0)
         {
             Debug.Log("health 0, lose!");

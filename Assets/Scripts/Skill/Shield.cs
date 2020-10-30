@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shield : MonoBehaviour
 {
 
-    private float timeRemaining = 3f;
+    public float timeRemaining = 3f;
     void Update()
     {
         timeRemaining -= Time.deltaTime;

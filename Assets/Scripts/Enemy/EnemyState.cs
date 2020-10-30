@@ -5,25 +5,40 @@ using UnityEngine;
 public class EnemyState : MonoBehaviour
 {
     public bool isMovable = true;
-    public float slowArgument = 0.5f;
+    private float slowArgument;
     private float timeCount;
+    
     private bool isSlow = false;
 
-    public void SlowDown(float time)
+    public void SlowDown(float time, float arg)
     {
-        if(isMovable)
-            SlowDown(time);
+        slowArgument = arg;
+        if(isMovable && isSlow)
+        {
+            timeCount = time;
+        }
+        else if(isMovable)
+        {
+            GetSlowStart(time);
+        }
+            
     }
     private void GetSlowStart(float time)
     {
         isSlow = true;
         timeCount = time;
-        gameObject.GetComponent<Rigidbody>().velocity *= slowArgument;
+        gameObject.GetComponent<EnemySpecialMovementBase>().speed *= slowArgument;
+        EnemyMovement moveObj = gameObject.GetComponent<EnemyMovement>();
+        if(moveObj!=null)
+            moveObj.speed *= slowArgument;
     }
     private void GetSlowEnd()
     {
         isSlow = false;
-        gameObject.GetComponent<Rigidbody>().velocity /= slowArgument;
+        gameObject.GetComponent<EnemySpecialMovementBase>().speed /= slowArgument;
+        EnemyMovement moveObj = gameObject.GetComponent<EnemyMovement>();
+        if(moveObj!=null)
+            moveObj.speed /= slowArgument;
     }
 
     private void Update()
