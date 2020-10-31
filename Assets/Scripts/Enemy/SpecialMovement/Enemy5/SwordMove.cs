@@ -37,5 +37,10 @@ public class SwordMove : MonoBehaviour
             speed = 0f;
             isReadyToDie = true;
         }
+        if(other.gameObject.tag=="ScareCrow")
+        {
+            speed = 0f;
+            isReadyToDie = true;
+        }
     }
 }

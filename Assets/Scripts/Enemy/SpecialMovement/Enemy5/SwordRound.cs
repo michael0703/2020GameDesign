@@ -7,7 +7,7 @@ public class SwordRound : MonoBehaviour
     // Start is called before the first frame update
     Vector3 rotateSpeed = new Vector3(0, 100, 0);
     GameObject [] swords = new GameObject[3];
-    GameObject playerBody;
+    public GameObject target;
     float timer = 4f;
     int currentSword = 0;
     bool isAttacking = false;
@@ -18,7 +18,6 @@ public class SwordRound : MonoBehaviour
             Renderer rend = swords[i].GetComponent<MeshRenderer>();
             rend.enabled = false;
         }
-        playerBody = GameObject.Find("/Player/Body");
     }
 
     // Update is called once per frame
@@ -31,15 +30,24 @@ public class SwordRound : MonoBehaviour
             }
             timer -= Time.deltaTime;
             transform.Rotate(rotateSpeed * Time.deltaTime);
-            if (timer <= 0){
+            if (timer <= 0 && currentSword < 3){
                 Renderer rend = swords[currentSword].GetComponent<MeshRenderer>();
                 rend.enabled = true;
                 currentSword += 1;
-                timer = 4f;
+                timer = 2f;
             }
             if (currentSword >= 3){
-                attack();
-                isAttacking = true;
+                transform.parent.parent.gameObject.GetComponent<EnemySpecialMovement5>().assignTarget();
+                if (target != null){
+                    Debug.Log("Attack!!!");
+                    isAttacking = true;
+                    attack();
+                }
+                // else if (target == null){
+                //     for(int i=0; i<3; i++){
+                //         swords[i].GetComponent<SwordMove>().isReadyToDie = true;
+                //     }
+                // }
             }
         }
         else{
@@ -58,7 +66,7 @@ public class SwordRound : MonoBehaviour
 
     public void attack(){
         for(int i=0; i<3; i++){
-            Vector3 direction = swords[i].transform.position - playerBody.transform.position;
+            Vector3 direction = swords[i].transform.position - target.transform.position;
             
             swords[i].transform.up = -1f * direction;
             swords[i].GetComponent<SwordMove>().isAttacking = true;

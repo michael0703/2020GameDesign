@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class SpecialBullet1 : BulletBase
 {   
-    public int collideObjectTag;
+    public float bouncingFactor = 0.8f;
     protected override void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag=="Enemy")
+        if(other.gameObject.tag=="Wall")
         {
-            //Debug.Log("This is Skill 1 Hit Enemy, will do no damage");
+            rb.velocity = new Vector3 (rb.velocity.x * -1 * bouncingFactor, rb.velocity.y, rb.velocity.z * bouncingFactor);
         }
-        if(other.gameObject.tag=="Wall" || other.gameObject.tag=="Floor" )
+        if(other.gameObject.tag=="Floor" )
         {   
-            if (other.gameObject.tag=="Wall") collideObjectTag = 2;
-            if (other.gameObject.tag=="Floor") collideObjectTag = 1;
             isReady = true;
             skill.GetComponent<SkillBase>().CheckBulletAreReady();
             rb.velocity = Vector3.zero;
         }
         
     }
+
 }
