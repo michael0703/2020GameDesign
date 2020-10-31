@@ -5,32 +5,33 @@ using UnityEngine;
 public class Enemy3Bullet : MonoBehaviour
 {
     public int damage = 5;
-    private GameObject player;
-    private float rotateSpeed = 90f;
-    private float moveSpeed = 2f;
+    private float startVelocity = 10f;
 
-    public void setPlayer(GameObject player)
+    private void Start()
     {
-
-        this.player = player;
+        gameObject.GetComponent<Rigidbody>().AddForce(startVelocity*transform.forward,ForceMode.VelocityChange);
     }
-    // Update is called once per frame
-    void Update()
-    {
-        Vector3 difference = player.transform.position - transform.position;
-        difference.y = 0;
 
-        if (difference.magnitude < moveSpeed * Time.deltaTime)
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
         {
-            //Debug.Log("enemy3 demage");
-            player.GetComponent<PlayerHealth>().GetHurt(damage);
+            other.gameObject.GetComponent<PlayerHealth>().GetHurt(damage);
+            Destroy(gameObject);
+        }else if (other.tag == "Wall" || other.tag == "Floor")
+        {
+
             Destroy(gameObject);
         }
-        else
-        {
-            Quaternion lookRotation = Quaternion.LookRotation(difference.normalized, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, rotateSpeed * Time.deltaTime);
-            transform.Translate(difference.normalized * moveSpeed * Time.deltaTime, Space.World);
-        }
+
+
+
+
     }
+
+
+
 }
