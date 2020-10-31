@@ -24,7 +24,7 @@ public class SwordMove : MonoBehaviour
     {
         if(other.gameObject.tag=="Player")
         {
-            Debug.Log("Hit Player");
+            //Debug.Log("Hit Player");
             speed = 0f;
             isReadyToDie = true;
             GameObject player = GameObject.Find("/Player");
@@ -33,7 +33,7 @@ public class SwordMove : MonoBehaviour
         }
         if(other.gameObject.tag=="Wall" || other.gameObject.tag=="Floor")
         {
-            Debug.Log("Hit Wall (Floor)");
+            //Debug.Log("Hit Wall (Floor)");
             speed = 0f;
             isReadyToDie = true;
         }

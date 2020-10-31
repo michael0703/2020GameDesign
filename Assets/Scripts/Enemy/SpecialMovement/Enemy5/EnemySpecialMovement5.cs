@@ -10,10 +10,10 @@ public class EnemySpecialMovement5 : EnemySpecialMovementBase
     bool InitSwordRound = false;
     public bool DestroySwordRound = false;
 
-    protected override void specialMove()
+    protected override void specialMove(GameObject target)
     {
-        lookAtPlayer(player);
-        rb.velocity = transform.forward * 2f;
+        lookAtPlayer(target);
+        rb.velocity = transform.forward * speed;
 
         enemyAttackAction();
 

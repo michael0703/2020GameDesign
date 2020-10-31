@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InterMove : MonoBehaviour
+public class InterMove : EnemySpecialMovementBase
 {
-    public int damage = 3;
-    public float speed = 1f;
-
     private float timeCount = 0;
     private Vector3 movePattern;
 
-    void Update()
+    protected override void Start()
+    {
+
+    }
+    protected override void specialMove(GameObject target)
     {
         timeCount -= Time.deltaTime;
         if(timeCount<=0)
@@ -21,13 +22,6 @@ public class InterMove : MonoBehaviour
         transform.position += movePattern * speed * Time.deltaTime;
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if(other.gameObject.tag=="Player")
-        {
-            other.gameObject.GetComponent<PlayerHealth>().GetHurt(damage);
-        }
-    }
     private void OnDestroy()
     {
         gameObject.transform.parent.GetComponent<CreateMiniEnemy>().CountLeft();

@@ -130,3 +130,4 @@ MonoBehaviour:
   damage: 5
   skillType: 1
   isReady: 0
+  collideObjectTag: 0

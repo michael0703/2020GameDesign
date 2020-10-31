@@ -16,10 +16,10 @@ public class SpecialBullet5 : BulletBase
         if(other.gameObject.tag=="Enemy")
         {   
             if(!isWaitingToActivate){
-                Debug.Log("This is Skill 5 Hit Enemy, will do no damage");
+                //Debug.Log("This is Skill 5 Hit Enemy, will do no damage");
             }
             else{
-                other.gameObject.transform.parent.GetComponent<EnemyHealth>().GetHurt(damage * 4);
+                other.gameObject.GetComponent<EnemyHealth>().GetHurt(damage * 4);
             }
         }
         if(other.gameObject.tag=="Wall" || other.gameObject.tag=="Floor" )
@@ -39,7 +39,7 @@ public class SpecialBullet5 : BulletBase
             
         }
         if(other.gameObject.tag=="Player"){
-            Debug.Log("Hit User, Destroy");
+            //Debug.Log("Hit User, Destroy");
             rb.velocity = Vector3.zero;
             isReadyToDie = true;
         }

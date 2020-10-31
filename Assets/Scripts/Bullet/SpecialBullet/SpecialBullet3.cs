@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpecialBullet3 : BulletBase
 {
-    private float activateCountDown = 0.5f;
+    public float activateCountDown = 0.5f;
     private void Update()
     {
 
