@@ -10,7 +10,7 @@ public class IsGrounded : MonoBehaviour
     {
         player = transform.parent.gameObject;
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if(other.gameObject.tag=="Floor")
         {
