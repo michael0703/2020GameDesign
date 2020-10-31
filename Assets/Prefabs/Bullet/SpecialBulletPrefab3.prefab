@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4080595798578007462}
   m_Layer: 0
   m_Name: SpecialBulletPrefab3
-  m_TagString: Untagged
+  m_TagString: SkillBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,3 +130,4 @@ MonoBehaviour:
   damage: 5
   skillType: 3
   isReady: 0
+  activateCountDown: 0.5

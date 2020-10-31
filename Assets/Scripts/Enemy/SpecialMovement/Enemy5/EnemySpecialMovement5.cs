@@ -9,22 +9,32 @@ public class EnemySpecialMovement5 : EnemySpecialMovementBase
     GameObject swordRound;
     bool InitSwordRound = false;
     public bool DestroySwordRound = false;
+    public GameObject detectTarget;
 
     protected override void specialMove(GameObject target)
-    {
+    {   
+        
         lookAtPlayer(target);
         rb.velocity = transform.forward * speed;
-
-        enemyAttackAction();
+        detectTarget = target;
+        enemyAttackAction(target);
+        
 
     }
-    void enemyAttackAction(){
+    public void assignTarget(){
+
+        swordRound.transform.GetChild(0).GetComponent<SwordRound>().target = detectTarget;
+
+    }
+
+    void enemyAttackAction(GameObject target){
 
         if(!InitSwordRound){
-            Vector3 position = gameObject.transform.Find("InnerCollider").transform.position;
-            position.y += 1f;
+            Vector3 position = transform.position;
+            position.y += 2f;
             swordRound = (GameObject)Instantiate(swordRoundPrefab, position, Quaternion.identity);
             swordRound.transform.parent = gameObject.transform;
+            // swordRound.transform.GetChild(0).GetComponent<SwordRound>().target = target;
             // swordRound.name = "SwordRound";
             InitSwordRound = true;
         }
