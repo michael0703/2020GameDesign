@@ -15,7 +15,17 @@ public class EnemySpecialMovement5 : EnemySpecialMovementBase
     {   
         
         lookAtPlayer(target);
-        rb.velocity = transform.forward * speed;
+
+        GameObject maxAttackRangeSphere = gameObject.transform.GetChild(4).gameObject;
+        float dist = Vector3.Distance(rb.position, target.transform.position);
+        if (dist >= maxAttackRangeSphere.transform.lossyScale.x){
+            rb.velocity = transform.forward * speed;    
+        }
+        else{
+            rb.velocity = Vector3.zero;
+            // rb.velocity = transform.forward * speed;    
+        }
+        
         detectTarget = target;
         enemyAttackAction(target);
         
@@ -34,8 +44,6 @@ public class EnemySpecialMovement5 : EnemySpecialMovementBase
             position.y += 2f;
             swordRound = (GameObject)Instantiate(swordRoundPrefab, position, Quaternion.identity);
             swordRound.transform.parent = gameObject.transform;
-            // swordRound.transform.GetChild(0).GetComponent<SwordRound>().target = target;
-            // swordRound.name = "SwordRound";
             InitSwordRound = true;
         }
         if(DestroySwordRound){
