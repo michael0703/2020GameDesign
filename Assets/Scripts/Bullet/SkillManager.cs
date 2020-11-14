@@ -22,14 +22,15 @@ public class SkillManager : MonoBehaviour
             skillList[i].GetComponent<SkillBase>().ResetSkill(numOfBulletInSkill[i]);
         }
     }
-    public void RegistBullet(GameObject bullet)
+    public bool RegistBullet(GameObject bullet)
     {
         int type = bullet.GetComponent<BulletBase>().skillType;
-        if(skillList[type].GetComponent<SkillBase>().AddBullet(bullet))
+        bool isFull = skillList[type].GetComponent<SkillBase>().AddBullet(bullet);
+        if(isFull)
         {
-
             skillList[type] = (GameObject)Instantiate(skillPrefabs[type],transform);
             skillList[type].GetComponent<SkillBase>().ResetSkill(numOfBulletInSkill[type]);
         }
+        return isFull;
     }
 }

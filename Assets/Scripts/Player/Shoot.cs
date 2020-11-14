@@ -15,11 +15,15 @@ public class Shoot : MonoBehaviour
     private float timeCounting = 0;
     private float [] timeCountingSp = {0, 0, 0, 0, 0, 0};
     private int numOfSkillType;
+    private float [] coolOfSkill;
+    private float [] coolCounting = {0,0,0,0,0,0};
+
     private GameObject skillManager;
     private GameObject mainCamera;
     void Start()
     {
         numOfSkillType = GameObject.Find("GlobalVar").GetComponent<GlobalVar>().numOfSkillType;
+        coolOfSkill = GameObject.Find("GlobalVar").GetComponent<GlobalVar>().coolOfSkill;
         skillManager = GameObject.Find("SkillManager");
         GameObject gun = transform.parent.gameObject;
         mainCamera = gun.transform.parent.gameObject;
@@ -28,13 +32,17 @@ public class Shoot : MonoBehaviour
     {
         timeCounting -= Time.deltaTime;
         for(int i=0; i<numOfSkillType; i++)
+        {
             timeCountingSp[i] -= Time.deltaTime;
-        
+            coolCounting[i] -= Time.deltaTime;
+        }
+
         // shoot special bullet
-        if(Input.GetMouseButtonDown(1) && timeCountingSp[currentSkillType]<=0)
+        if(Input.GetMouseButtonDown(1) && timeCountingSp[currentSkillType]<=0 && coolCounting[currentSkillType]<=0)
         {
             GameObject specialBullet = (GameObject)Instantiate(bulletPrefabSp[currentSkillType],transform.position,mainCamera.transform.rotation);
-            skillManager.GetComponent<SkillManager>().RegistBullet(specialBullet);
+            bool isFull = skillManager.GetComponent<SkillManager>().RegistBullet(specialBullet);
+            if(isFull) coolCounting[currentSkillType] = coolOfSkill[currentSkillType];
             timeCountingSp[currentSkillType] = intervalOfShootingSp[currentSkillType];
         }
 
