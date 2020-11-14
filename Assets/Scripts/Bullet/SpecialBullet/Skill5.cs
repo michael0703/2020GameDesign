@@ -22,9 +22,6 @@ public class Skill5 : SkillBase
             }
         }
         if(flag){
-            for(int i=0; i<bullets.Length; i++){
-                Object.Destroy(bullets[i].GetComponent<SpecialBullet5>().trackingRay);
-            }
             DestroySkill();
         }
     }

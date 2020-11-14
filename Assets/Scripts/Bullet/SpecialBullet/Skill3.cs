@@ -9,8 +9,11 @@ public class Skill3 : SkillBase
 
     protected override void ActivateSkill()
     {
+        Vector3 shootXZDirection = bullets[0].transform.forward;
+        shootXZDirection.y = 0;
 
-        Instantiate(shieldPrefab, bullets[0].transform.position, bullets[0].transform.rotation);
+        GameObject shield= Instantiate(shieldPrefab, bullets[0].transform.position, Quaternion.LookRotation(shootXZDirection));
+        Destroy(shield, 5f);
         DestroySkill();
 
 

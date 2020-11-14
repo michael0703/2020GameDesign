@@ -8,16 +8,30 @@ public class EnemySpecialMovement4 : EnemySpecialMovementBase
     public float attackSpeed = 2f;
     public float attackDistance = 2f;
     public int damage = 5;
+    public float noiseWalkLasting = 0.5f;
     private float attackCounting;
+    private float noiseWalkCounting;
+    private float noiseWalkPattern;
+    private GameObject foot;
     protected override void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
         attackCounting = 0;
+        noiseWalkCounting = 0;
+
+        foot = transform.GetChild (1).gameObject;
+        foot.transform.localScale = new Vector3(1, Random.Range(0, 5f), 1);
     }
     protected override void specialMove(GameObject target)
     {
         lookAtPlayer(target);
-        rb.velocity = speed * transform.forward;
+        noiseWalkCounting -= Time.deltaTime;
+        if(noiseWalkCounting<=0)
+        {
+            noiseWalkCounting = noiseWalkLasting;
+            noiseWalkPattern = Random.Range(-1.0f, 1.0f);      
+        }
+        rb.velocity = speed * transform.forward + noiseWalkPattern * transform.right;
 
         Vector3 difference=target.transform.position - transform.position;
         difference.y = 0;

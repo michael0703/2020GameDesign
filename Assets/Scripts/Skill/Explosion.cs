@@ -6,6 +6,7 @@ public class Explosion : MonoBehaviour
 {
     public GameObject ExplosionEffectPrefab;
     public int damage = 5;
+    public int radius = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class Explosion : MonoBehaviour
             Destroy(explosionEffect, 0.5f);
 
 
-            Collider[] colliders=Physics.OverlapSphere(transform.position, 5);
+            Collider[] colliders=Physics.OverlapSphere(transform.position, radius);
             foreach(Collider collider in colliders)
             {
                 if (collider.gameObject.tag == "Enemy")
