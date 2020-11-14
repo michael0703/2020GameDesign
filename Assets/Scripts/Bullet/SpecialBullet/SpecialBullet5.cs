@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class SpecialBullet5 : BulletBase
 {   
-    public GameObject trackingRayPrefab;
-    public GameObject trackingRay;
-    public LineRenderer lineRenderer;
     private GameObject player;
     public bool isWaitingToActivate = false;
     public bool isReadyToDie = false;
@@ -30,30 +27,24 @@ public class SpecialBullet5 : BulletBase
             if(!isWaitingToActivate){
                 rb.velocity = Vector3.zero;
             }
-            trackingRay = (GameObject)Instantiate(trackingRayPrefab);
             player = GameObject.Find("/Player/MainCamera/Gun");
-            lineRenderer = trackingRay.GetComponent<LineRenderer>();
-            lineRenderer.transform.parent = gameObject.transform;
-            lineRenderer.SetPosition(0, this.gameObject.transform.position);
-            lineRenderer.SetPosition(1, player.transform.position);
+            
             
         }
         if(other.gameObject.tag=="Player"){
-            //Debug.Log("Hit User, Destroy");
+            Debug.Log("Hit User, Bullet5 Destroy");
             rb.velocity = Vector3.zero;
             isReadyToDie = true;
         }
     }
     public void Update(){
-        if (trackingRay && !isReadyToDie){
-            lineRenderer.SetPosition(1, player.transform.position);
+        if (!isReady){
+            rb.velocity -= rb.transform.forward * 0.15f;
+        }
+        float angle = Vector3.Angle(rb.velocity, rb.transform.forward);
+        if (Mathf.Abs(angle - 180f) < 1f){
+            isReady = true;
+            skill.GetComponent<SkillBase>().CheckBulletAreReady();
         }
     }
-    // void OnDestroy()
-    // {   
-    //     if(trackingRay){
-    //         Debug.Log("Tracking Ray is still alive");
-    //     }
-    //     Object.Destroy(trackingRay);
-    // }
 }
