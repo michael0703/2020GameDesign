@@ -15,7 +15,7 @@ public class ScareCrow : MonoBehaviour
     {
         InstantiateTime += Time.deltaTime;
         if (InstantiateTime > lastingTime){
-            Object.Destroy(this.gameObject);
+            Object.Destroy(gameObject);
         }
         
     }
