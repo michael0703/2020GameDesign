@@ -15,7 +15,7 @@ public class SwordRound : MonoBehaviour
     {
         for(int i=0; i<3; i++){
             swords[i] = gameObject.transform.GetChild(i).gameObject;
-            Renderer rend = swords[i].GetComponent<MeshRenderer>();
+            Renderer rend = swords[i].transform.GetChild(0).GetComponent<MeshRenderer>();
             rend.enabled = false;
         }
     }
@@ -31,7 +31,7 @@ public class SwordRound : MonoBehaviour
             timer -= Time.deltaTime;
             transform.Rotate(rotateSpeed * Time.deltaTime);
             if (timer <= 0 && currentSword < 3){
-                Renderer rend = swords[currentSword].GetComponent<MeshRenderer>();
+                Renderer rend = swords[currentSword].transform.GetChild(0).GetComponent<MeshRenderer>();
                 rend.enabled = true;
                 currentSword += 1;
                 timer = 2f;

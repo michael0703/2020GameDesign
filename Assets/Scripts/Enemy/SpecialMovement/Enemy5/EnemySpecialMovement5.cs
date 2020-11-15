@@ -10,20 +10,29 @@ public class EnemySpecialMovement5 : EnemySpecialMovementBase
     bool InitSwordRound = false;
     public bool DestroySwordRound = false;
     public GameObject detectTarget;
+    Animator animator;
+    protected override void Start()
+    {
+        rb = gameObject.GetComponent<Rigidbody>();
+        animator = gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
+    }
 
     protected override void specialMove(GameObject target)
     {   
         
+        
+        animator.SetBool("detectObject", true);
         lookAtPlayer(target);
 
-        GameObject maxAttackRangeSphere = gameObject.transform.GetChild(4).gameObject;
+        GameObject maxAttackRangeSphere = gameObject.transform.GetChild(3).gameObject;
         float dist = Vector3.Distance(rb.position, target.transform.position);
         if (dist >= maxAttackRangeSphere.transform.lossyScale.x){
             rb.velocity = transform.forward * speed;    
+            animator.SetBool("idle", false);
         }
         else{
             rb.velocity = Vector3.zero;
-            // rb.velocity = transform.forward * speed;    
+            animator.SetBool("idle", true);  
         }
         
         detectTarget = target;
@@ -41,7 +50,7 @@ public class EnemySpecialMovement5 : EnemySpecialMovementBase
 
         if(!InitSwordRound){
             Vector3 position = transform.position;
-            position.y += 2f;
+            position.y += 1.5f;
             swordRound = (GameObject)Instantiate(swordRoundPrefab, position, Quaternion.identity);
             swordRound.transform.parent = gameObject.transform;
             InitSwordRound = true;
