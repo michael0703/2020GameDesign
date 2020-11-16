@@ -13,11 +13,14 @@ public class EnemySpecialMovement4 : EnemySpecialMovementBase
     private float noiseWalkCounting;
     private float noiseWalkPattern;
     private GameObject foot;
+    private Animator animator;
     protected override void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
         attackCounting = 0;
         noiseWalkCounting = 0;
+
+        animator = transform.GetChild(0).gameObject.GetComponent<Animator>();
 
         foot = transform.GetChild (1).gameObject;
         foot.transform.localScale = new Vector3(1, Random.Range(0, 5f), 1);
@@ -31,18 +34,21 @@ public class EnemySpecialMovement4 : EnemySpecialMovementBase
             noiseWalkCounting = noiseWalkLasting;
             noiseWalkPattern = Random.Range(-1.0f, 1.0f);      
         }
-        rb.velocity = speed * transform.forward + noiseWalkPattern * transform.right;
+        rb.velocity = speed * (transform.forward + 0.2f * noiseWalkPattern * transform.right);
 
         Vector3 difference=target.transform.position - transform.position;
         difference.y = 0;
         if (difference.magnitude < attackDistance)
         {
+            rb.velocity = Vector3.zero;
             attackCounting -= Time.deltaTime;
             if(attackCounting<=0)
             {
+                animator.Play("Attack");
                 target.GetComponent<PlayerHealth>().GetHurt(damage);
                 attackCounting = attackSpeed;
             }
+            
         }
         
     }

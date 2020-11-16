@@ -5,6 +5,8 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     public float lastingTime = 5f;
+    public GameObject explosionPrefab;
+    //public ParticleSystem system;
 
     private GameObject bombArea;
     private float counting;
@@ -41,19 +43,23 @@ public class Target : MonoBehaviour
     {
         if(other.gameObject.tag=="NormalBullet")
         {
-            ActivateArea();
+            NormalBullet sc = other.gameObject.GetComponent<NormalBullet>();
+            ActivateArea(sc.isFreezed, sc.effectTime, sc.slowArgument);
+            Destroy(other.gameObject);
         }
     }
-    private void ActivateArea()
+    private void ActivateArea(bool isFreeze, float effectTime, float slowArgument)
     {
-        bombArea.GetComponent<MeshRenderer>().enabled = true;
-        bombArea.GetComponent<SphereCollider>().enabled = true;
+        bombArea.GetComponent<BombArea>().Activate(isFreeze, effectTime, slowArgument);
         isActive = true;
+
+        GameObject explosion = (GameObject)Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        explosion.transform.parent = transform;
+
     }
     private void DeactivateArea()
     {
-        bombArea.GetComponent<MeshRenderer>().enabled = false;
-        bombArea.GetComponent<SphereCollider>().enabled = false;
+        bombArea.GetComponent<BombArea>().Deactivate();
         isActive = false;
     }
 }

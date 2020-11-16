@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     // Health system of monster
     public int startHealth = 100;
-    private int currentHealth;
+    public int currentHealth;
 
     public void  GetHurt(int damage){
         currentHealth -= damage;
