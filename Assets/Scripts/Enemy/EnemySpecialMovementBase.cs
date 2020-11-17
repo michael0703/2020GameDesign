@@ -21,7 +21,7 @@ public class EnemySpecialMovementBase : MonoBehaviour
 
     }
     void Update()
-    {
+    {   
         if(detectScareCrow==true && scareCrow==null)
         {
             detectScareCrow=false;
