@@ -19,7 +19,7 @@ public class EnemySpecialMovement3 : EnemySpecialMovementBase
             shootCountDown -= Time.deltaTime;
             if (shootCountDown <= 0)
             {
-                GameObject bullet =Instantiate(enemy3bulletPrefab, transform.GetChild(2).position, transform.GetChild(2).rotation);
+                GameObject bullet =Instantiate(enemy3bulletPrefab, transform.GetChild(1).position, Quaternion.LookRotation(target.transform.position - transform.GetChild(1).position));
                 shootCountDown = 2f;
             }
         }

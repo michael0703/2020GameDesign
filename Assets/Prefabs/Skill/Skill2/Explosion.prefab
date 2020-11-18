@@ -43,5 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4a18b10896d419598c63912a9a24fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExplosionEffectPrefab: {fileID: 7572924810323602115, guid: cf7fa99ae01a047ff85ef45b55cc92b9,
+  ExplosionEffectPrefab: {fileID: 9149265368738593775, guid: a6ef93381224549a0b5899a63552a17a,
     type: 3}
+  damage: 5
+  radius: 5
