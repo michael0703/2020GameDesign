@@ -6,9 +6,12 @@ public class ScareCrow : MonoBehaviour
 {
     public float lastingTime = 3f;
     private float InstantiateTime;
+    GameObject player;
     void Start()
     {
         InstantiateTime = 0;
+        player = GameObject.Find("/Player");
+        transform.forward = player.transform.position - transform.position;
     }
 
     void Update()
