@@ -45,3 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullets: []
   skillType: 5
+  isTargetCombo: 0
+  skillManager: {fileID: 0}
+  spBullet5_prefab: {fileID: 4566687420999752768, guid: a7d99fe6caa63dc47b395323d837abe0,
+    type: 3}
