@@ -16,6 +16,15 @@ public class EnemySpecialMovement0 : EnemySpecialMovementBase
     private float dashingTimeCounting = 0;
     private float coolingTimeCounting = 0;
     private Vector3 playerOldPos;
+
+    private Animator animator;
+
+    protected override void Start()
+    {
+        rb = gameObject.GetComponent<Rigidbody>();
+        animator = transform.GetChild(1).gameObject.GetComponent<Animator>();
+
+    }
     protected override void specialMove(GameObject target)
     {
         if(state==0) // aproaching player
@@ -25,6 +34,7 @@ public class EnemySpecialMovement0 : EnemySpecialMovementBase
             if(playerInSight) 
             {
                 state = 1;
+                animator.SetInteger("state", 1);
                 rb.velocity = new Vector3(0,0,0);
                 turnOnWarning();
                 playerOldPos = target.transform.position;
@@ -39,6 +49,7 @@ public class EnemySpecialMovement0 : EnemySpecialMovementBase
             {
                 chargingTimeCounting = 0;
                 state = 2;
+                animator.SetInteger("state", 2);
                 rb.velocity = dashFactor * speed * transform.forward;
             }
 
@@ -50,6 +61,7 @@ public class EnemySpecialMovement0 : EnemySpecialMovementBase
             {
                 dashingTimeCounting = 0;
                 state = 3;
+                animator.SetInteger("state", 3);
                 turnOffWarning();
                 rb.velocity = new Vector3(0,0,0);
             }
@@ -61,6 +73,7 @@ public class EnemySpecialMovement0 : EnemySpecialMovementBase
             {
                 coolingTimeCounting = 0;
                 state = 0;
+                animator.SetInteger("state", 0);
             }
         }
     }

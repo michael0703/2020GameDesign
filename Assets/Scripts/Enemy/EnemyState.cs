@@ -28,17 +28,19 @@ public class EnemyState : MonoBehaviour
         isSlow = true;
         timeCount = time;
         gameObject.GetComponent<EnemySpecialMovementBase>().speed *= slowArgument;
-        EnemyMovement moveObj = gameObject.GetComponent<EnemyMovement>();
-        if(moveObj!=null)
-            moveObj.speed *= slowArgument;
+        gameObject.GetComponent<EnemyMovement>().speed *= slowArgument;
+        // EnemyMovement moveObj = gameObject.GetComponent<EnemyMovement>();
+        // if(moveObj!=null)
+        //     moveObj.speed *= slowArgument;
     }
     private void GetSlowEnd()
     {
         isSlow = false;
         gameObject.GetComponent<EnemySpecialMovementBase>().speed /= slowArgument;
-        EnemyMovement moveObj = gameObject.GetComponent<EnemyMovement>();
-        if(moveObj!=null)
-            moveObj.speed /= slowArgument;
+        gameObject.GetComponent<EnemyMovement>().speed /= slowArgument;
+        // EnemyMovement moveObj = gameObject.GetComponent<EnemyMovement>();
+        // if(moveObj!=null)
+        //     moveObj.speed /= slowArgument;
     }
 
     private void Update()
