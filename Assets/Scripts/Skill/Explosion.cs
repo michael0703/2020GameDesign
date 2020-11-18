@@ -37,7 +37,7 @@ public class Explosion : MonoBehaviour
                     {
                         //Debug.Log("move");
                         Vector3 blownDirection = collider.transform.position - transform.position;
-                        collider.GetComponent<Rigidbody>().AddForce(blownDirection.normalized * 300);
+                        collider.GetComponent<Rigidbody>().AddForce(blownDirection.normalized * 900);
                     }
 
 
