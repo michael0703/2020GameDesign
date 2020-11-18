@@ -6,7 +6,10 @@ public class SlowLine : MonoBehaviour
 {
     public float lastingTime = 5f;
     public float effectTime = 10f;
-    private float slowArgument = 0.5f;
+    public float slowArgument = 0.5f;
+
+    public Material freezeMaterial;
+
     private float counting;
     void Start()
     {
@@ -26,6 +29,14 @@ public class SlowLine : MonoBehaviour
         if(other.gameObject.tag=="Enemy")
         {
             other.gameObject.GetComponent<EnemyState>().SlowDown(effectTime,slowArgument);
+        }
+        if(other.gameObject.tag=="NormalBullet")
+        {
+            other.gameObject.GetComponent<MeshRenderer>().material = freezeMaterial;
+            NormalBullet sc = other.gameObject.GetComponent<NormalBullet>();
+            sc.isFreezed = true;
+            sc.effectTime = effectTime;
+            sc.slowArgument = slowArgument;
         }
     }
 }

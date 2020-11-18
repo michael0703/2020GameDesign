@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4566687420999752780}
   - component: {fileID: 4566687420999752783}
   - component: {fileID: 4566687420999752782}
-  - component: {fileID: 4566687420999752769}
   - component: {fileID: 7649361701738678771}
   - component: {fileID: -3552597478497165546}
+  - component: {fileID: 8098825197459880311}
   m_Layer: 0
   m_Name: SpecialBulletPrefab0
   m_TagString: SkillBullet
@@ -82,19 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &4566687420999752769
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4566687420999752768}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.2
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &7649361701738678771
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -130,3 +117,16 @@ MonoBehaviour:
   damage: 5
   skillType: 0
   isReady: 0
+--- !u!135 &8098825197459880311
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4566687420999752768}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.65
+  m_Center: {x: 0, y: 0, z: 0}
