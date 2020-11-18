@@ -16,7 +16,7 @@ public class EnemySpecialMovementTemplate : EnemySpecialMovementBase
     }
     protected override void specialMove(GameObject target)
     {   
-        animator.SetBool("detectObject", true);
+        animator.SetBool("isDetect", true);
         lookAtPlayer(target);
 
         float dist = Vector3.Distance(target.transform.position, transform.position);
