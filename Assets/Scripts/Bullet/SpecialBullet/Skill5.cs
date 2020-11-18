@@ -9,6 +9,7 @@ public class Skill5 : SkillBase
     public GameObject skillManager;
     public GameObject spBullet5_prefab;
     public Transform targetTransform;
+    public GameObject smokeEffectPrefab;
     protected override void ActivateSkill()
     {   
         if (isTargetCombo){
@@ -21,6 +22,8 @@ public class Skill5 : SkillBase
                 Vector3 velocity = player.transform.position - bullets[i].gameObject.transform.position;
                 bullets[i].GetComponent<Rigidbody>().velocity = velocity * 3f;
                 bullets[i].GetComponent<SpecialBullet5>().isWaitingToActivate = true;
+                GameObject smoke = (GameObject)Instantiate(smokeEffectPrefab, bullets[i].gameObject.transform.position, Quaternion.identity);
+                smoke.transform.parent = bullets[i].transform;
             }
         }
     }
