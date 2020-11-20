@@ -11,18 +11,11 @@ public class Enemy3Bullet : MonoBehaviour
 
     private void Start()
     {
-    }
-
-    private void Update()
-    {
-        shootCountdown -= Time.deltaTime;
-        if (shootCountdown <= 0&&shoot==false)
-        {
-            gameObject.GetComponent<Rigidbody>().AddForce(startVelocity * transform.forward, ForceMode.VelocityChange);
-            shoot = true;
-        }   
+        gameObject.GetComponent<Rigidbody>().AddForce(startVelocity * transform.forward, ForceMode.VelocityChange);
 
     }
+
+
 
 
 
