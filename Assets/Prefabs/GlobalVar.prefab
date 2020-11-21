@@ -44,4 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numOfSkillType: 6
-  numOfBulletInSkill: 020000000100000001000000010000000100000005000000
+  numOfBulletInSkill: 020000000100000001000000010000000100000001000000
+  coolOfSkill:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0

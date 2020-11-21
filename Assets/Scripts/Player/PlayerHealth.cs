@@ -6,12 +6,13 @@ public class PlayerHealth : MonoBehaviour
 {
     // Health system of player
     public int startHealth = 100;
-    private int currentHealth;
+    public int currentHealth;
 
-    public void  GetHurt(int damage){
+    public void GetHurt(int damage)
+    {
         currentHealth -= damage;
         Debug.Log("Player health: " + currentHealth);
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Debug.Log("health 0, lose!");
         }
@@ -22,6 +23,6 @@ public class PlayerHealth : MonoBehaviour
     }
     void Update()
     {
-        
+
     }
 }
