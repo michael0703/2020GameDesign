@@ -20,6 +20,7 @@ public class Shoot : MonoBehaviour
 
     private GameObject skillManager;
     private GameObject mainCamera;
+    Animator animator;
     void Start()
     {
         numOfSkillType = GameObject.Find("GlobalVar").GetComponent<GlobalVar>().numOfSkillType;
@@ -27,6 +28,7 @@ public class Shoot : MonoBehaviour
         skillManager = GameObject.Find("SkillManager");
         GameObject gun = transform.parent.gameObject;
         mainCamera = gun.transform.parent.gameObject;
+        animator = gun.GetComponent<Animator>();
     }
     void Update()
     {
@@ -49,6 +51,7 @@ public class Shoot : MonoBehaviour
         // shoot normal bullet
         if(Input.GetMouseButtonDown(0) && timeCounting<=0)
         {
+            animator.Play("GunShoot_v1");
             Instantiate(bulletPrefab,transform.position,mainCamera.transform.rotation);
             timeCounting = intervalOfShooting;
         }
@@ -56,6 +59,7 @@ public class Shoot : MonoBehaviour
         // change currentSkillType
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
+            animator.Play("BulletSwitch_v1");
             currentSkillType = 0;
         }
         if(Input.GetKeyDown(KeyCode.Alpha2))
