@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedForward: 8
-  speedUpward: 5
+  speedUpward: 3
   forceForward: 0
   forceUpward: 0
   damage: 5
