@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class BillBoard : MonoBehaviour
 {
-    public Transform cam;
+    private Transform cam;
+    
+    void Start()
+    {
+        cam = GameObject.Find("MainCamera").transform;
+    }
     void LateUpdate()
     {
         transform.LookAt(transform.position + cam.forward);

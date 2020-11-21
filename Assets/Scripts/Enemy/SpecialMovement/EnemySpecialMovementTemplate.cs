@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class EnemySpecialMovementTemplate : EnemySpecialMovementBase
 {   
-    float rotateSpeed = 3f;
-    float speed = 2f;
-    float cooldown_countdown = 0f;
+    public float rotateSpeed = 3f;
+    public float cooldown_countdown = 0f;
     public float attack_range = 2f;
-    Animator animator;
+    private Animator animator;
     protected override void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();

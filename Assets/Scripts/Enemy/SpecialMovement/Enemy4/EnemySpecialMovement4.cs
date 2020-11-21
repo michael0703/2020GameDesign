@@ -22,7 +22,7 @@ public class EnemySpecialMovement4 : EnemySpecialMovementBase
 
         animator = transform.GetChild(0).gameObject.GetComponent<Animator>();
 
-        foot = transform.GetChild (1).gameObject;
+        foot = transform.GetChild(1).gameObject;
         foot.transform.localScale = new Vector3(1, Random.Range(0, 5f), 1);
     }
     protected override void specialMove(GameObject target)

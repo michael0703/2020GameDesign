@@ -13,8 +13,9 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody rb;
     private float timeCount = 0;
     private Vector3 movePattern;
-    float rotateSpeed = 0.8f;
-    Quaternion qTo;
+    private float rotateSpeed = 0.8f;
+    private Quaternion qTo;
+    
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
