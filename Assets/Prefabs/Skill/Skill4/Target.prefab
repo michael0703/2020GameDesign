@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastingTime: 5
   explosionPrefab: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
+  freezeMaterial: {fileID: 2100000, guid: e1d831a46ac934b42aa1a7972bf57d60, type: 2}
 --- !u!1 &7900491545342194048
 GameObject:
   m_ObjectHideFlags: 0

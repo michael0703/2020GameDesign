@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastingTime: 10
-  effectTime: 10
+  effectTime: 5
   slowArgument: 0.25
   freezeMaterial: {fileID: 2100000, guid: e1d831a46ac934b42aa1a7972bf57d60, type: 2}
 --- !u!64 &6827638392356604195

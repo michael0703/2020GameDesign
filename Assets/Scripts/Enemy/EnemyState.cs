@@ -5,10 +5,19 @@ using UnityEngine;
 public class EnemyState : MonoBehaviour
 {
     public bool isMovable = true;
+    public Material freezeMaterial;
     private float slowArgument;
     private float timeCount;
     
     private bool isSlow = false;
+    private Material ori;
+    private GameObject rend;
+
+    void Start()
+    {
+        rend = gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
+        ori = rend.GetComponent<Renderer>().material;
+    }
 
     public void SlowDown(float time, float arg)
     {
@@ -25,6 +34,7 @@ public class EnemyState : MonoBehaviour
     }
     private void GetSlowStart(float time)
     {
+        rend.GetComponent<Renderer>().material = freezeMaterial;
         isSlow = true;
         timeCount = time;
         gameObject.GetComponent<EnemySpecialMovementBase>().speed *= slowArgument;
@@ -35,6 +45,8 @@ public class EnemyState : MonoBehaviour
     }
     private void GetSlowEnd()
     {
+        GameObject rend = gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
+        rend.GetComponent<Renderer>().material = ori;
         isSlow = false;
         gameObject.GetComponent<EnemySpecialMovementBase>().speed /= slowArgument;
         gameObject.GetComponent<EnemyMovement>().speed /= slowArgument;

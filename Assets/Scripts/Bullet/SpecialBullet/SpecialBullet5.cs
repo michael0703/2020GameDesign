@@ -9,6 +9,11 @@ public class SpecialBullet5 : BulletBase
     public bool isReadyToDie = false;
     public bool isCloneBullet = false;
 
+    //for slow
+    public bool isFreezed = false;
+    public float effectTime = 0;
+    public float slowArgument = 1f;
+
     protected override void OnTriggerEnter(Collider other)
     {   
         if(other.gameObject.GetComponent<Target>() && !isCloneBullet){
@@ -33,6 +38,10 @@ public class SpecialBullet5 : BulletBase
                 //Debug.Log("This is Skill 5 Hit Enemy, will do no damage");
             }
             else{
+                if(isFreezed)
+                {
+                    other.gameObject.GetComponent<EnemyState>().SlowDown(effectTime,slowArgument);
+                }
                 other.gameObject.GetComponent<EnemyHealth>().GetHurt(damage * 4);
             }
         }

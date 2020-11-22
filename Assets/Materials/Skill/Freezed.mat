@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FreezedBullet
+  m_Name: Freezed
   m_Shader: {fileID: 4800000, guid: 85ecddbabe23d4bbbb8c360bb899ed48, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
