@@ -49,3 +49,5 @@ MonoBehaviour:
   skillManager: {fileID: 0}
   spBullet5_prefab: {fileID: 4566687420999752768, guid: a7d99fe6caa63dc47b395323d837abe0,
     type: 3}
+  targetTransform: {fileID: 0}
+  smokeEffectPrefab: {fileID: 100000, guid: 2f76a13e08331429c9e034345eaeb369, type: 3}

@@ -5,27 +5,53 @@ using UnityEngine;
 public class EnemySpecialMovement3 : EnemySpecialMovementBase
 {
     private float rotateSpeed = 90f;
+    public float runningSpeed = 1.5f;
+    public Transform shootPoint;
     public GameObject enemy3bulletPrefab;
-    private float shootCountDown=2f;
+
+    public float attackRadius = 10;
+    private int attackTime=-1;
 
     protected override void specialMove(GameObject target)
     {
+
         Vector3 difference = target.transform.position - transform.position;
         difference.y = 0;
         Quaternion lookRotation = Quaternion.LookRotation(difference.normalized, Vector3.up);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, rotateSpeed * Time.deltaTime);
-        if (Quaternion.Angle(transform.rotation, lookRotation) < 3f)
+
+        if (transform.GetChild(0).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).fullPathHash != Animator.StringToHash("Base Layer.SpecialMovement.attack01"))
         {
+            attackTime = -1;
+        }
+
+        if (difference.magnitude<attackRadius)
+        {
+            transform.GetChild(0).GetComponent<Animator>().SetBool("withinRange", true);
+            /*
             shootCountDown -= Time.deltaTime;
             if (shootCountDown <= 0)
             {
+                //transform.GetChild(0).GetComponent<Animator>().SetBool("isDetect", false);
                 GameObject bullet =Instantiate(enemy3bulletPrefab, transform.GetChild(1).position, Quaternion.LookRotation(target.transform.position - transform.GetChild(1).position));
+
                 shootCountDown = 2f;
-            }
+            }*/
+
+            if (transform.GetChild(0).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).fullPathHash == Animator.StringToHash("Base Layer.SpecialMovement.attack01") && transform.GetChild(0).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > attackTime && transform.GetChild(0).GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime - attackTime - 1 > 0.6)
+            {
+                attackTime += 1;
+                GameObject bullet = Instantiate(enemy3bulletPrefab, shootPoint.position, Quaternion.LookRotation(target.transform.position - shootPoint.position));
+
+            };
+
         }
         else
         {
-            shootCountDown = 2f;
+            transform.GetChild(0).GetComponent<Animator>().SetBool("withinRange", false);
+
+            transform.Translate(Vector3.forward*runningSpeed*Time.deltaTime);
         }
+
     }
 }

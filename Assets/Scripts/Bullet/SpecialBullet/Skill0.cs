@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Skill0 : SkillBase
 {
-    public float y = 0.1f;
-    public float z = 0.1f;
+    public float height = 2f;
+    public float depth = 1f;
     public GameObject slowLinePrefab;
     protected override void ActivateSkill()
     {
@@ -14,7 +14,7 @@ public class Skill0 : SkillBase
         Vector3 goalPos = Vector3.Lerp(bullet0Pos, bullet1Pos, 0.5f);
  
         float length = Vector3.Distance(bullet0Pos, bullet1Pos)*1.05f;
-        Vector3 goalScale = new Vector3(length, y, z);
+        Vector3 goalScale = new Vector3(length, height, depth);
 
         GameObject slowLine = (GameObject)Instantiate(slowLinePrefab, goalPos, Quaternion.identity);
         slowLine.transform.right = bullets[0].transform.position - bullets[1].transform.position;

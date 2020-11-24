@@ -21,7 +21,7 @@ public class EnemySpecialMovement5 : EnemySpecialMovementBase
     {   
         
         
-        animator.SetBool("detectObject", true);
+        animator.SetBool("isDetect", true);
         lookAtPlayer(target);
 
         GameObject maxAttackRangeSphere = gameObject.transform.GetChild(3).gameObject;

@@ -27,6 +27,7 @@ public class EnemySpecialMovementBase : MonoBehaviour
             detectScareCrow=false;
             gameObject.GetComponent<EnemyMovement>().detectScareCrow = false;
             scareCrow = null;
+            gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("isDetect", false);
         }
         if(detectScareCrow)
         {
