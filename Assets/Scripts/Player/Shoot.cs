@@ -43,11 +43,20 @@ public class Shoot : MonoBehaviour
             coolCounting[i] -= Time.deltaTime;
         }
 
+        
+
         // shoot special bullet
         if(Input.GetMouseButtonDown(1) && timeCountingSp[currentSkillType]<=0 && coolCounting[currentSkillType]<=0)
         {
+            int layerMask = 1 << 8 | 1 << 9;    
+            RaycastHit hit;
+            Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, Mathf.Infinity, layerMask);
+            Vector3 bulletFoward = hit.point - transform.position;
+
+
             animator.Play("GunShoot_v1");
             GameObject specialBullet = (GameObject)Instantiate(bulletPrefabSp[currentSkillType],transform.position,mainCamera.transform.rotation);
+            specialBullet.transform.forward = bulletFoward;
             bool isFull = skillManager.GetComponent<SkillManager>().RegistBullet(specialBullet);
             if(isFull) coolCounting[currentSkillType] = coolOfSkill[currentSkillType];
             timeCountingSp[currentSkillType] = intervalOfShootingSp[currentSkillType];
@@ -56,9 +65,17 @@ public class Shoot : MonoBehaviour
 
         // shoot normal bullet
         if(Input.GetMouseButtonDown(0) && timeCounting<=0)
-        {
+        {   
+            
+            int layerMask = 1 << 8 | 1 << 9;
+            RaycastHit hit;
+            Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, Mathf.Infinity, layerMask);
+            Vector3 bulletFoward = hit.point - transform.position;
+
+
             animator.Play("GunShoot_v1");
-            Instantiate(bulletPrefab,transform.position,mainCamera.transform.rotation);
+            GameObject bullet = Instantiate(bulletPrefab,transform.position,mainCamera.transform.rotation);
+            bullet.transform.forward = bulletFoward;
             timeCounting = intervalOfShooting;
             fireVFX.Play();
         }

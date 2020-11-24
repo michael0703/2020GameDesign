@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 3669702831430613266}
   - component: {fileID: 1950858807}
   - component: {fileID: 6956384928398737843}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ Transform:
   m_GameObject: {fileID: 5195630150118346071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 6.37}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 9094378706867953620}
   - {fileID: 5195630150032440994}
@@ -523,7 +523,7 @@ PrefabInstance:
     - target: {fileID: 1905171532943867752, guid: 6c4ef0c25e458dd449d1cf38602250be,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1905171532943867752, guid: 6c4ef0c25e458dd449d1cf38602250be,
         type: 3}
@@ -573,7 +573,7 @@ PrefabInstance:
     - target: {fileID: 1905171532943867752, guid: 6c4ef0c25e458dd449d1cf38602250be,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.679
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1905171532943867752, guid: 6c4ef0c25e458dd449d1cf38602250be,
         type: 3}
