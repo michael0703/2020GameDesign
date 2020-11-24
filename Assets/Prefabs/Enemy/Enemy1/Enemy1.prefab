@@ -207,6 +207,8 @@ MonoBehaviour:
   player: {fileID: 0}
   scareCrow: {fileID: 0}
   speed: 1
+  rotateSpeed: 3
+  cooldown_countdown: 0
   attack_range: 2
 --- !u!114 &3623522415492260487
 MonoBehaviour:
@@ -220,7 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e502ce7e172cf4442b19de3106c133f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMovable: 0
+  isMovable: 1
+  freezeMaterial: {fileID: 2100000, guid: e1d831a46ac934b42aa1a7972bf57d60, type: 2}
 --- !u!65 &746198219967622324
 BoxCollider:
   m_ObjectHideFlags: 0

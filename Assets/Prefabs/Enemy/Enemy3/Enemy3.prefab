@@ -219,10 +219,11 @@ MonoBehaviour:
   player: {fileID: 0}
   scareCrow: {fileID: 0}
   speed: 1
+  runningSpeed: 1.5
+  shootPoint: {fileID: 782814375}
   enemy3bulletPrefab: {fileID: 7674941216007592066, guid: 716de9a23ed794b27bebf98b3a244bda,
     type: 3}
-  radius: 10
-  shootPoint: {fileID: 782814375}
+  attackRadius: 10
 --- !u!114 &8731315564728126453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMovable: 1
+  freezeMaterial: {fileID: 2100000, guid: e1d831a46ac934b42aa1a7972bf57d60, type: 2}
 --- !u!65 &-1178397048169158615
 BoxCollider:
   m_ObjectHideFlags: 0

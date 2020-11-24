@@ -361,6 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMovable: 1
+  freezeMaterial: {fileID: 2100000, guid: e1d831a46ac934b42aa1a7972bf57d60, type: 2}
 --- !u!65 &8154245168485084553
 BoxCollider:
   m_ObjectHideFlags: 0

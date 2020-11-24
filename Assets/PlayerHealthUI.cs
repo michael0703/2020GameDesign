@@ -46,7 +46,7 @@ public class PlayerHealthUI : MonoBehaviour
         hitEffectCountdown -= Time.deltaTime;
         if (hitEffectCountdown <= 0f)
         {
-            Debug.Log(hit);
+            // Debug.Log(hit);
 
             hit.enabled = false;
         }

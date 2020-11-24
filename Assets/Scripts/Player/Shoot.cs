@@ -46,6 +46,7 @@ public class Shoot : MonoBehaviour
         // shoot special bullet
         if(Input.GetMouseButtonDown(1) && timeCountingSp[currentSkillType]<=0 && coolCounting[currentSkillType]<=0)
         {
+            animator.Play("GunShoot_v1");
             GameObject specialBullet = (GameObject)Instantiate(bulletPrefabSp[currentSkillType],transform.position,mainCamera.transform.rotation);
             bool isFull = skillManager.GetComponent<SkillManager>().RegistBullet(specialBullet);
             if(isFull) coolCounting[currentSkillType] = coolOfSkill[currentSkillType];
@@ -69,23 +70,28 @@ public class Shoot : MonoBehaviour
             currentSkillType = 0;
         }
         if(Input.GetKeyDown(KeyCode.Alpha2))
-        {
+        {   
+            animator.Play("BulletSwitch_v1");
             currentSkillType = 1;
         }
         if(Input.GetKeyDown(KeyCode.Alpha3))
-        {
+        {   
+            animator.Play("BulletSwitch_v1");
             currentSkillType = 2;
         }
         if(Input.GetKeyDown(KeyCode.Alpha4))
-        {
+        {   
+            animator.Play("BulletSwitch_v1");
             currentSkillType = 3;
         }
         if(Input.GetKeyDown(KeyCode.Alpha5))
         {
+            animator.Play("BulletSwitch_v1");
             currentSkillType = 4;
         }
         if(Input.GetKeyDown(KeyCode.Alpha6))
         {
+            animator.Play("BulletSwitch_v1");
             currentSkillType = 5;
         }
         
