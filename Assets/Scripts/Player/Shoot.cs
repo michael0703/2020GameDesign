@@ -16,7 +16,7 @@ public class Shoot : MonoBehaviour
     private float [] timeCountingSp = {0, 0, 0, 0, 0, 0};
     private int numOfSkillType;
     private float [] coolOfSkill;
-    private float [] coolCounting = {0,0,0,0,0,0};
+    public float [] coolCounting = {0,0,0,0,0,0};
 
     private GameObject skillManager;
     private GameObject mainCamera;
