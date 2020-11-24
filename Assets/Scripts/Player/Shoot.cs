@@ -11,6 +11,9 @@ public class Shoot : MonoBehaviour
     public float [] intervalOfShootingSp = {0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f};
     
     public int currentSkillType = 0;
+    
+    public GameObject fireVFXPrefab;
+    private ParticleSystem fireVFX;
 
     private float timeCounting = 0;
     private float [] timeCountingSp = {0, 0, 0, 0, 0, 0};
@@ -29,6 +32,7 @@ public class Shoot : MonoBehaviour
         GameObject gun = transform.parent.gameObject;
         mainCamera = gun.transform.parent.gameObject;
         animator = gun.GetComponent<Animator>();
+        fireVFX = fireVFXPrefab.GetComponent<ParticleSystem>();
     }
     void Update()
     {
@@ -46,6 +50,7 @@ public class Shoot : MonoBehaviour
             bool isFull = skillManager.GetComponent<SkillManager>().RegistBullet(specialBullet);
             if(isFull) coolCounting[currentSkillType] = coolOfSkill[currentSkillType];
             timeCountingSp[currentSkillType] = intervalOfShootingSp[currentSkillType];
+            fireVFX.Play();
         }
 
         // shoot normal bullet
@@ -54,6 +59,7 @@ public class Shoot : MonoBehaviour
             animator.Play("GunShoot_v1");
             Instantiate(bulletPrefab,transform.position,mainCamera.transform.rotation);
             timeCounting = intervalOfShooting;
+            fireVFX.Play();
         }
 
         // change currentSkillType

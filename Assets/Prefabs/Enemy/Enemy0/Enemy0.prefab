@@ -166,7 +166,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 5195630150118346062}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1818811928956724258
 SphereCollider:
@@ -229,8 +229,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.5, z: 6.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5195630150032440994}
   - {fileID: 9094378706867953620}
+  - {fileID: 5195630150032440994}
   - {fileID: 2877690017723331107}
   - {fileID: 352380813}
   - {fileID: 8115270952251260758}
@@ -353,6 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMovable: 1
+  freezeMaterial: {fileID: 2100000, guid: e1d831a46ac934b42aa1a7972bf57d60, type: 2}
 --- !u!114 &3669702831430613266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,7 +673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 388476416, guid: 7df524699deb44341b3693c8538df185, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 388476416, guid: 7df524699deb44341b3693c8538df185, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

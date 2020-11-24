@@ -32,11 +32,27 @@ public class SlowLine : MonoBehaviour
         }
         if(other.gameObject.tag=="NormalBullet")
         {
-            other.gameObject.GetComponent<MeshRenderer>().material = freezeMaterial;
+            other.gameObject.GetComponent<Renderer>().material = freezeMaterial;
             NormalBullet sc = other.gameObject.GetComponent<NormalBullet>();
             sc.isFreezed = true;
             sc.effectTime = effectTime;
             sc.slowArgument = slowArgument;
         }
+        if(other.gameObject.tag=="SkillBullet" && other.gameObject.GetComponent<BulletBase>().skillType==5)
+        {
+            other.gameObject.GetComponent<Renderer>().material = freezeMaterial;
+            SpecialBullet5 sb = other.gameObject.GetComponent<SpecialBullet5>();
+            sb.isFreezed = true;
+            sb.effectTime = effectTime;
+            sb.slowArgument = slowArgument;
+        }
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.tag=="Enemy")
+        {
+            other.gameObject.GetComponent<EnemyState>().SlowDown(effectTime,slowArgument);
+        }
+    }
+
 }

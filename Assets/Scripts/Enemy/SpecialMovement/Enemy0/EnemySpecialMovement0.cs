@@ -22,7 +22,7 @@ public class EnemySpecialMovement0 : EnemySpecialMovementBase
     protected override void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        animator = transform.GetChild(1).gameObject.GetComponent<Animator>();
+        animator = transform.GetChild(0).gameObject.GetComponent<Animator>();
 
     }
     protected override void specialMove(GameObject target)

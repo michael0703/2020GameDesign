@@ -17,7 +17,7 @@ public class DetectPlayer : MonoBehaviour
             enemy.GetComponent<EnemyMovement>().detectPlayer = true;
             enemy.GetComponent<EnemySpecialMovementBase>().detectPlayer = true;
             enemy.GetComponent<EnemySpecialMovementBase>().player = other.gameObject;
-            
+            enemy.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("isDetect", true); 
         }
 
     }

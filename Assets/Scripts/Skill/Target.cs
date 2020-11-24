@@ -6,7 +6,7 @@ public class Target : MonoBehaviour
 {
     public float lastingTime = 5f;
     public GameObject explosionPrefab;
-    //public ParticleSystem system;
+    public Material freezeMaterial;
 
     private GameObject bombArea;
     private float counting;
@@ -54,6 +54,11 @@ public class Target : MonoBehaviour
         isActive = true;
 
         GameObject explosion = (GameObject)Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        if(isFreeze)
+        {
+            ParticleSystem.MainModule settings = explosion.GetComponent<ParticleSystem>().main;
+            settings.startColor = freezeMaterial.color;
+        }   
         explosion.transform.parent = transform;
 
     }
