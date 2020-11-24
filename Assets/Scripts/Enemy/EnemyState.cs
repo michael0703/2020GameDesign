@@ -11,12 +11,21 @@ public class EnemyState : MonoBehaviour
     
     private bool isSlow = false;
     private Material ori;
-    private GameObject rend;
+    private Renderer rend;
 
     void Start()
     {
-        rend = gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
-        ori = rend.GetComponent<Renderer>().material;
+        GameObject tmp = gameObject.transform.GetChild(0).gameObject;
+        foreach(Transform item in tmp.transform)
+        {
+            Debug.Log(item.name);
+            Renderer tmpp=item.GetComponent<Renderer>();
+            if(tmpp!=null)
+            {
+                rend = tmpp;
+                ori = tmpp.material;
+            }
+        }
     }
 
     public void SlowDown(float time, float arg)
@@ -34,25 +43,18 @@ public class EnemyState : MonoBehaviour
     }
     private void GetSlowStart(float time)
     {
-        rend.GetComponent<Renderer>().material = freezeMaterial;
+        rend.material = freezeMaterial;
         isSlow = true;
         timeCount = time;
         gameObject.GetComponent<EnemySpecialMovementBase>().speed *= slowArgument;
         gameObject.GetComponent<EnemyMovement>().speed *= slowArgument;
-        // EnemyMovement moveObj = gameObject.GetComponent<EnemyMovement>();
-        // if(moveObj!=null)
-        //     moveObj.speed *= slowArgument;
     }
     private void GetSlowEnd()
     {
-        GameObject rend = gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject;
-        rend.GetComponent<Renderer>().material = ori;
+        rend.material = ori;
         isSlow = false;
         gameObject.GetComponent<EnemySpecialMovementBase>().speed /= slowArgument;
         gameObject.GetComponent<EnemyMovement>().speed /= slowArgument;
-        // EnemyMovement moveObj = gameObject.GetComponent<EnemyMovement>();
-        // if(moveObj!=null)
-        //     moveObj.speed /= slowArgument;
     }
 
     private void Update()
