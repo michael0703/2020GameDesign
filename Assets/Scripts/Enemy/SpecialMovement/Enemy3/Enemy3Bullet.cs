@@ -24,7 +24,7 @@ public class Enemy3Bullet : MonoBehaviour
         {
             other.gameObject.GetComponent<PlayerHealth>().GetHurt(damage);
             Destroy(gameObject);
-        }else if (other.tag == "Wall" || other.tag == "Floor")
+        }else if (other.tag == "Wall" || other.tag == "Floor" || other.tag=="Scarecrow")
         {
 
             Destroy(gameObject);
