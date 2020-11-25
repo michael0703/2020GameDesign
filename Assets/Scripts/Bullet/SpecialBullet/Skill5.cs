@@ -8,18 +8,26 @@ public class Skill5 : SkillBase
     public bool isTargetCombo = false;
     public GameObject skillManager;
     public GameObject spBullet5_prefab;
+    public GameObject targetObject; 
     public Transform targetTransform;
     public GameObject smokeEffectPrefab;
     protected override void ActivateSkill()
     {   
         if (isTargetCombo){
-            activateTargetCombo();
+            
+            int hitTimePrev = bullets[0].GetComponent<SpecialBullet5>().hitTime;
+            activateTargetCombo(hitTimePrev);
             DestroySkill();
         }
         else{
             player = GameObject.Find("/Player/MainCamera/Gun");
+
             for(int i = 0; i < bullets.Length; i++){
-                Vector3 velocity = player.transform.position - bullets[i].gameObject.transform.position;
+                GameObject reflectGoal = bullets[i].GetComponent<SpecialBullet5>().reflectObject;
+                if (!reflectGoal){
+                    reflectGoal = player;
+                }
+                Vector3 velocity = reflectGoal.transform.position - bullets[i].gameObject.transform.position;
                 bullets[i].GetComponent<Rigidbody>().velocity = velocity * 3f;
                 bullets[i].GetComponent<SpecialBullet5>().isWaitingToActivate = true;
                 GameObject smoke = (GameObject)Instantiate(smokeEffectPrefab, bullets[i].gameObject.transform.position, Quaternion.identity);
@@ -27,9 +35,9 @@ public class Skill5 : SkillBase
             }
         }
     }
-    void activateTargetCombo(){
+    void activateTargetCombo(int hitTimePrev){
         skillManager = GameObject.Find("SkillManager");
-        int cloneBulletNum = 5;
+        int cloneBulletNum = 10;
         for(int i=0; i<cloneBulletNum; i++){
             Vector3 initPos = targetTransform.position;
             initPos.y +=  targetTransform.localScale.y * 0.5f * 0.75f;
@@ -44,6 +52,8 @@ public class Skill5 : SkillBase
             GameObject specialBullet = (GameObject)Instantiate(spBullet5_prefab, initPos, Quaternion.identity);
             specialBullet.transform.forward = new Vector3(tmp.x, 0, tmp.z);
             specialBullet.GetComponent<SpecialBullet5>().isCloneBullet = true;
+            specialBullet.GetComponent<SpecialBullet5>().hitTime = hitTimePrev + 1;
+            specialBullet.GetComponent<SpecialBullet5>().reflectObject = targetObject;
             bool isFull = skillManager.GetComponent<SkillManager>().RegistBullet(specialBullet);
         }        
     }
