@@ -12,7 +12,7 @@ public class Skill3 : SkillBase
         Vector3 shootXZDirection = bullets[0].transform.forward;
         shootXZDirection.y = 0;
 
-        GameObject shield= Instantiate(shieldPrefab, bullets[0].transform.position, Quaternion.LookRotation(shootXZDirection));
+        GameObject shield= Instantiate(shieldPrefab, bullets[0].transform.position-Vector3.up, Quaternion.LookRotation(shootXZDirection));
         Destroy(shield, lastingTime);
         DestroySkill();
 

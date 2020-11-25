@@ -18,7 +18,7 @@ public class SkillUI : MonoBehaviour
     {
         Vector3 position = skills[lastSkillType].GetComponent<RectTransform>().anchoredPosition;
         lastYPosition=position.y;
-        position.y = -50;
+        position.y += 1f/50*Screen.height;
         skills[lastSkillType].GetComponent<RectTransform>().anchoredPosition = position;
     }
 
@@ -39,7 +39,7 @@ public class SkillUI : MonoBehaviour
             lastSkillType = currentSkillType;
             position = skills[lastSkillType].GetComponent<RectTransform>().anchoredPosition;
             lastYPosition = position.y;
-            position.y = -50;
+            position.y += 1f / 50 * Screen.height;
             skills[lastSkillType].GetComponent<RectTransform>().anchoredPosition = position;
 
         }
