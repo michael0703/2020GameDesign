@@ -46,9 +46,9 @@ MonoBehaviour:
   numOfSkillType: 6
   numOfBulletInSkill: 020000000100000001000000010000000100000001000000
   coolOfSkill:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 3
+  - 10
+  - 6
+  - 4
+  - 9
+  - 1

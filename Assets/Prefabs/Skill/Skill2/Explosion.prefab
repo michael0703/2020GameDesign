@@ -46,4 +46,4 @@ MonoBehaviour:
   ExplosionEffectPrefab: {fileID: 9149265368738593775, guid: a6ef93381224549a0b5899a63552a17a,
     type: 3}
   damage: 5
-  radius: 5
+  radius: 4

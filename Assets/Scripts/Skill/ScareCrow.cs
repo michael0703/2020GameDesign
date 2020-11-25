@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScareCrow : MonoBehaviour
 {
-    public float lastingTime = 3f;
+    public float lastingTime = 6f;
     private float InstantiateTime;
     GameObject player;
     void Start()

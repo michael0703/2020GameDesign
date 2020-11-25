@@ -47,3 +47,4 @@ MonoBehaviour:
   skillType: 3
   shieldPrefab: {fileID: 1402425465877824111, guid: ec5a62e1bba544298b5b1ab11e7fb051,
     type: 3}
+  lastingTime: 15

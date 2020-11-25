@@ -336,7 +336,7 @@ MonoBehaviour:
   dashFactor: 15
   rotateSpeed: 10
   chargingTime: 2
-  dashingTime: 0.5
+  dashingTime: 1
   coolingTime: 3
   state: 0
   playerInSight: 0

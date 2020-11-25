@@ -6,7 +6,7 @@ public class Shoot : MonoBehaviour
 {
     //This class create bullet.
     public GameObject bulletPrefab;
-    public float intervalOfShooting = 0.1f;
+    public float intervalOfShooting = 0.3f;
     public GameObject [] bulletPrefabSp;
     public float [] intervalOfShootingSp = {0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f};
     
@@ -72,7 +72,7 @@ public class Shoot : MonoBehaviour
             Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out hit, Mathf.Infinity, layerMask);
             Vector3 bulletFoward = hit.point - transform.position;
 
-
+            
             animator.Play("GunShoot_v1");
             GameObject bullet = Instantiate(bulletPrefab,transform.position,mainCamera.transform.rotation);
             bullet.transform.forward = bulletFoward;

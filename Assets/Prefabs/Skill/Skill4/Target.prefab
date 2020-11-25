@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce18e74d478ea74d92862a9b7032b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastingTime: 5
+  lastingTime: 8
   explosionPrefab: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
   freezeMaterial: {fileID: 2100000, guid: e1d831a46ac934b42aa1a7972bf57d60, type: 2}
 --- !u!1 &7900491545342194048

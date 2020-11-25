@@ -70,7 +70,7 @@ public class SpecialBullet5 : BulletBase
     }
     public void Update(){
         if (!isReady){
-            rb.velocity -= rb.transform.forward * 0.15f;
+            rb.velocity -= rb.transform.forward * 0.25f;
         }
         float angle = Vector3.Angle(rb.velocity, rb.transform.forward);
         if (Mathf.Abs(angle - 180f) < 1f){
