@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 500
   currentHealth: 0
+  deadAnim: {fileID: 7400000, guid: d3aad3207f5c7984a878d6d3e713003f, type: 2}
 --- !u!114 &2144100638452436001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +142,7 @@ MonoBehaviour:
   speed: 0.2
   detectPlayer: 0
   detectScareCrow: 0
+  isDead: 0
 --- !u!114 &5023171821872406874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectPlayer: 0
   detectScareCrow: 0
+  isDead: 0
   player: {fileID: 0}
   scareCrow: {fileID: 0}
   speed: 1
@@ -228,7 +231,7 @@ PrefabInstance:
     - target: {fileID: 1905171532943867752, guid: 6c4ef0c25e458dd449d1cf38602250be,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.65
       objectReference: {fileID: 0}
     - target: {fileID: 1905171532943867752, guid: 6c4ef0c25e458dd449d1cf38602250be,
         type: 3}
@@ -273,12 +276,12 @@ PrefabInstance:
     - target: {fileID: 1905171532943867752, guid: 6c4ef0c25e458dd449d1cf38602250be,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.16
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1905171532943867752, guid: 6c4ef0c25e458dd449d1cf38602250be,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4.41
+      value: 3.59
       objectReference: {fileID: 0}
     - target: {fileID: 1905171532943867752, guid: 6c4ef0c25e458dd449d1cf38602250be,
         type: 3}
@@ -319,6 +322,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905171532943867752, guid: 6c4ef0c25e458dd449d1cf38602250be,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.021662662
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c4ef0c25e458dd449d1cf38602250be, type: 3}

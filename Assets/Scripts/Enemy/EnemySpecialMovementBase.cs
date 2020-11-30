@@ -7,9 +7,11 @@ public class EnemySpecialMovementBase : MonoBehaviour
     //This class describe how enemy move after detecting player.
     public bool detectPlayer = false;
     public bool detectScareCrow = false;
+    public bool isDead = false;
     public GameObject player;
     public GameObject scareCrow;
     public float speed = 1f;
+
     protected Rigidbody rb;
 
     protected virtual void Start()
@@ -31,11 +33,11 @@ public class EnemySpecialMovementBase : MonoBehaviour
             detectPlayer = false;
             player = null;
         }
-        if(detectScareCrow)
+        if(detectScareCrow && !isDead)
         {
             specialMove(scareCrow);
         }
-        else if(detectPlayer)
+        else if(detectPlayer && !isDead)
         {
             specialMove(player);
         }

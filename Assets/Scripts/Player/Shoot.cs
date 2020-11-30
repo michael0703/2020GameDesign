@@ -9,6 +9,8 @@ public class Shoot : MonoBehaviour
     public float intervalOfShooting = 0.3f;
     public GameObject [] bulletPrefabSp;
     public float [] intervalOfShootingSp = {0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f};
+    public AudioClip bulletAudio;
+    public AudioClip [] bulletAudioSp;
     
     public int currentSkillType = 0;
     
@@ -20,6 +22,7 @@ public class Shoot : MonoBehaviour
     private int numOfSkillType;
     private float [] coolOfSkill;
     public float [] coolCounting = {0,0,0,0,0,0};
+    private AudioSource audioSource;
 
     private GameObject skillManager;
     private GameObject mainCamera;
@@ -33,6 +36,7 @@ public class Shoot : MonoBehaviour
         mainCamera = gun.transform.parent.gameObject;
         animator = gun.GetComponent<Animator>();
         fireVFX = fireVFXPrefab.GetComponent<ParticleSystem>();
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -42,8 +46,6 @@ public class Shoot : MonoBehaviour
             timeCountingSp[i] -= Time.deltaTime;
             coolCounting[i] -= Time.deltaTime;
         }
-
-        
 
         // shoot special bullet
         if(Input.GetMouseButtonDown(1) && timeCountingSp[currentSkillType]<=0 && coolCounting[currentSkillType]<=0)
@@ -61,6 +63,7 @@ public class Shoot : MonoBehaviour
             if(isFull) coolCounting[currentSkillType] = coolOfSkill[currentSkillType];
             timeCountingSp[currentSkillType] = intervalOfShootingSp[currentSkillType];
             fireVFX.Play();
+            audioSource.PlayOneShot(bulletAudioSp[currentSkillType]);
         }
 
         // shoot normal bullet
@@ -78,6 +81,7 @@ public class Shoot : MonoBehaviour
             bullet.transform.forward = bulletFoward;
             timeCounting = intervalOfShooting;
             fireVFX.Play();
+            audioSource.PlayOneShot(bulletAudio);
         }
 
         // change currentSkillType

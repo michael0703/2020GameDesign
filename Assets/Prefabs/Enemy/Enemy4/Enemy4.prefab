@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 20
   currentHealth: 0
+  deadAnim: {fileID: 7400000, guid: 625e74d907dc48042baa437dc4090641, type: 3}
 --- !u!114 &-5184077048952226209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +149,7 @@ MonoBehaviour:
   speed: 1
   detectPlayer: 0
   detectScareCrow: 0
+  isDead: 0
 --- !u!114 &-7132881594989462807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectPlayer: 0
   detectScareCrow: 0
+  isDead: 0
   player: {fileID: 0}
   scareCrow: {fileID: 0}
   speed: 1
