@@ -11,7 +11,10 @@ public class Shoot : MonoBehaviour
     public float [] intervalOfShootingSp = {0.1f, 0.1f, 0.1f, 0.1f, 0.1f, 0.1f};
     public AudioClip bulletAudio;
     public AudioClip [] bulletAudioSp;
-    
+    public GameObject shootHintPrefab;
+    public GameObject shootHint;
+    public int [] hintForward = {0, 8, 10, 0, 0, 0};
+    public int hintIndex;
     public int currentSkillType = 0;
     
     public GameObject fireVFXPrefab;
@@ -38,8 +41,46 @@ public class Shoot : MonoBehaviour
         fireVFX = fireVFXPrefab.GetComponent<ParticleSystem>();
         audioSource = gameObject.GetComponent<AudioSource>();
     }
+    void ShowShootingHint(int index){
+        hintIndex = index;
+        float checkInterval = 100f;
+        Vector3 gunForward = mainCamera.transform.forward;
+        Vector3 initVelocity = gunForward * hintForward[index];
+        Vector3 initPos = transform.position;
+        Vector3 hintPos = Vector3.zero;
+        Debug.Log("Index: " + "   " + index);
+        Debug.Log("hintForward: "+ "   " + hintForward[index]);
+        Debug.Log("Fake Velocity" + "   " + initVelocity);
+        Debug.Log("Fake Pos" + "  " + initPos);
+        int timeInterval = 3;
+        // simulate bullet shoot, and make prefab;
+        for(int i=1; i < 200; i+=2){
+
+            float fakeDeltaTime = (float)timeInterval / checkInterval;
+            initVelocity.y -= 9.8f * fakeDeltaTime; 
+            initPos += initVelocity * fakeDeltaTime;
+            Debug.Log("PosPos" + "   " + initPos);
+            if (initPos.y <= 0.2){
+                hintPos = new Vector3(initPos.x, 0f, initPos.z);
+                break;
+            }
+        }
+        Debug.Log("Hint Pos" + "   " + hintPos);
+        shootHint = (GameObject)Instantiate(shootHintPrefab,hintPos,Quaternion.identity);
+        shootHint.transform.parent = transform;
+    }
+    void DestroyShootingHint(){
+        if (shootHint){
+            Object.Destroy(shootHint);
+        }
+    }
+
     void Update()
-    {
+    {   
+        if (shootHint){
+            DestroyShootingHint();
+            ShowShootingHint(hintIndex);
+        }
         timeCounting -= Time.deltaTime;
         for(int i=0; i<numOfSkillType; i++)
         {
@@ -87,31 +128,39 @@ public class Shoot : MonoBehaviour
         // change currentSkillType
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
+            DestroyShootingHint();
             animator.Play("BulletSwitch_v1");
             currentSkillType = 0;
         }
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {   
+            DestroyShootingHint();
+            ShowShootingHint(1);
             animator.Play("BulletSwitch_v1");
             currentSkillType = 1;
         }
         if(Input.GetKeyDown(KeyCode.Alpha3))
         {   
+            DestroyShootingHint();
+            ShowShootingHint(2);
             animator.Play("BulletSwitch_v1");
             currentSkillType = 2;
         }
         if(Input.GetKeyDown(KeyCode.Alpha4))
         {   
+            DestroyShootingHint();
             animator.Play("BulletSwitch_v1");
             currentSkillType = 3;
         }
         if(Input.GetKeyDown(KeyCode.Alpha5))
         {
+            DestroyShootingHint();
             animator.Play("BulletSwitch_v1");
             currentSkillType = 4;
         }
         if(Input.GetKeyDown(KeyCode.Alpha6))
         {
+            DestroyShootingHint();
             animator.Play("BulletSwitch_v1");
             currentSkillType = 5;
         }
