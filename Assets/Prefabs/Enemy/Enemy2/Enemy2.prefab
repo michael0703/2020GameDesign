@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078a228a32e4c664dbcdb27636f2ec44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
+  speed: 1
   detectPlayer: 0
   detectScareCrow: 0
   isDead: 0
@@ -160,9 +160,8 @@ MonoBehaviour:
   isDead: 0
   player: {fileID: 0}
   scareCrow: {fileID: 0}
-  speed: 1
+  speed: 1.5
   damage: 5
-  runningSpeed: 0.6
   attackRadius: 3
 --- !u!114 &-5312709462318004691
 MonoBehaviour:
