@@ -188,6 +188,8 @@ MonoBehaviour:
   startHealth: 100
   currentHealth: 0
   deadAnim: {fileID: 7400000, guid: b161d64d0b842484a8dfe278b2bc0b7a, type: 3}
+  damagePopUpPrefab: {fileID: 5025605514304171091, guid: 2c0d4bcf3d3b449bb9f5b741121c178b,
+    type: 3}
 --- !u!114 &2144100638452436001
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1176,13 +1176,8 @@ MonoBehaviour:
   shootHintPrefab: {fileID: 782548087994771559, guid: 9485e19e157ba4418ab892cc66db1634,
     type: 3}
   shootHint: {fileID: 0}
-  hintForward:
-  - 0
-  - 1
-  - 2
-  - 0
-  - 0
-  - 0
+  hintForward: 00000000080000000a000000000000000000000000000000
+  hintIndex: 0
   currentSkillType: 0
   fireVFXPrefab: {fileID: 8656129136515331295}
   coolCounting:
