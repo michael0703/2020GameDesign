@@ -13,6 +13,7 @@ public class EnemyHealth : MonoBehaviour
     private Rigidbody rb;
     private bool isMovable;
     private Animator anim;
+    private GameObject levelManager;
 
     public void  GetHurt(int damage){
 
@@ -28,13 +29,14 @@ public class EnemyHealth : MonoBehaviour
         // }
         
         currentHealth -= damage;
-        Debug.Log("Enemy health: " + currentHealth);
+        //Debug.Log("Enemy health: " + currentHealth);
         if(currentHealth <= 0)
         {   
             gameObject.GetComponent<EnemyMovement>().isDead = true;
             gameObject.GetComponent<EnemySpecialMovementBase>().isDead = true;
             gameObject.tag = "Untagged";
             anim.Play("dead");
+            levelManager.GetComponent<LevelManager>().EnemyDie();
             Destroy(gameObject, deadAnim.length);
         }
         else
@@ -49,6 +51,9 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = startHealth;
         player = GameObject.Find("Player");
         anim = gameObject.transform.GetChild(0).gameObject.GetComponent<Animator>();
+
+        levelManager = GameObject.Find("LevelManager");
+        levelManager.GetComponent<LevelManager>().monsterLeft++;
     }
 
 

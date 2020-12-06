@@ -16,10 +16,10 @@ public class ShieldScript : MonoBehaviour
         bool bulletPassThrough = canBulletPassThrough(other.gameObject);
         bool isBullet = isObjectBullet(other.gameObject);
         if(isBullet){
-            Debug.Log(other.gameObject.tag + " " + bulletPassThrough + " ");
+            //Debug.Log(other.gameObject.tag + " " + bulletPassThrough + " ");
         }
         if(!bulletPassThrough && isBullet){
-            Debug.Log("Bullet hit");
+            //Debug.Log("Bullet hit");
             Vector3 initPos = transform.position;
             Vector3 FinalPos = new Vector3(initPos.x +0.2f+ Random.Range(-0.10f, 0.10f) , initPos.y + Random.Range(-0.10f, 0.10f), initPos.z + 0.6f);
 

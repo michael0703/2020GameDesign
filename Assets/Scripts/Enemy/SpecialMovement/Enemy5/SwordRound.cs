@@ -39,7 +39,7 @@ public class SwordRound : MonoBehaviour
             if (currentSword >= 3){
                 transform.parent.parent.gameObject.GetComponent<EnemySpecialMovement5>().assignTarget();
                 if (target != null){
-                    Debug.Log("Attack!!!");
+                    //Debug.Log("Attack!!!");
                     isAttacking = true;
                     attack();
                 }
