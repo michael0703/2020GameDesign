@@ -13,6 +13,7 @@ public class BulletBase : MonoBehaviour
     public bool isReady = false;
     protected GameObject skill;
     protected Rigidbody rb;
+    public GameObject hitEffectPrefab;
     void Start()
     {
         rb = GetComponent<Rigidbody>();

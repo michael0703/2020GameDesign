@@ -41,6 +41,7 @@ public class SpecialBullet5 : BulletBase
                 //Debug.Log("This is Skill 5 Hit Enemy, will do no damage");
             }
             else{
+                Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
                 if(isFreezed)
                 {
                     other.gameObject.GetComponent<EnemyState>().SlowDown(effectTime,slowArgument);

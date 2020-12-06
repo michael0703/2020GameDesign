@@ -28,7 +28,7 @@ public class SwordMove : MonoBehaviour
             speed = 0f;
             isReadyToDie = true;
             GameObject player = GameObject.Find("/Player");
-            player.GetComponent<PlayerHealth>().GetHurt(50);
+            player.GetComponent<PlayerHealth>().GetHurt(10);
             
         }
         if(other.gameObject.tag=="Wall" || other.gameObject.tag=="Floor")
