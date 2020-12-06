@@ -130,3 +130,4 @@ MonoBehaviour:
   damage: 5
   skillType: 2
   isReady: 0
+  hitEffectPrefab: {fileID: 0}
