@@ -50,7 +50,7 @@ public class SpecialBullet5 : BulletBase
             }
         }
         if(hitTime >= 2 && other.gameObject.tag=="Wall"){
-            Debug.Log("Bullet Bounce too many times, destroy");
+            //Debug.Log("Bullet Bounce too many times, destroy");
             isReadyToDie = true;
             rb.velocity = Vector3.zero;
         }
@@ -67,7 +67,7 @@ public class SpecialBullet5 : BulletBase
             
         }
         if(other.gameObject.tag=="Player"){
-            Debug.Log("Hit User, Bullet5 Destroy");
+            //Debug.Log("Hit User, Bullet5 Destroy");
             rb.velocity = Vector3.zero;
             isReadyToDie = true;
         }

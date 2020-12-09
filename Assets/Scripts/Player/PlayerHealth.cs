@@ -8,21 +8,20 @@ public class PlayerHealth : MonoBehaviour
     public int startHealth = 100;
     public int currentHealth;
 
+    private GameObject levelManager;
+
     public void GetHurt(int damage)
     {
         currentHealth -= damage;
-        Debug.Log("Player health: " + currentHealth);
         if (currentHealth <= 0)
         {
-            Debug.Log("health 0, lose!");
+            levelManager.GetComponent<LevelManager>().Die();
         }
     }
     void Start()
     {
         currentHealth = startHealth;
+        levelManager = GameObject.Find("LevelManager");
     }
-    void Update()
-    {
-
-    }
+ 
 }

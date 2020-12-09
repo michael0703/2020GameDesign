@@ -348,7 +348,7 @@ MonoBehaviour:
   isDead: 0
   player: {fileID: 0}
   scareCrow: {fileID: 0}
-  speed: 1
+  speed: 2
   swordRoundPrefab: {fileID: 1871386320921781133, guid: 2ef6beaed563248b0b7e05f2301fd1a3,
     type: 3}
   DestroySwordRound: 0

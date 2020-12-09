@@ -126,6 +126,18 @@ public class Shoot : MonoBehaviour
         }
 
         // change currentSkillType
+        float mouseScroll = Input.GetAxis("Mouse ScrollWheel");
+        if(mouseScroll<0)
+        {
+            animator.Play("BulletSwitch_v1");
+            currentSkillType = (currentSkillType+1)%numOfSkillType;
+        }
+        if(mouseScroll>0)
+        {
+            animator.Play("BulletSwitch_v1");
+            currentSkillType--;
+            currentSkillType = (currentSkillType>=0)? currentSkillType: numOfSkillType-1;
+        }
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             DestroyShootingHint();

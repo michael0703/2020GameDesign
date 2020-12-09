@@ -334,12 +334,12 @@ MonoBehaviour:
   isDead: 0
   player: {fileID: 0}
   scareCrow: {fileID: 0}
-  speed: 1
-  dashFactor: 15
+  speed: 2
+  dashFactor: 10
   rotateSpeed: 10
   chargingTime: 2
   dashingTime: 1
-  coolingTime: 3
+  coolingTime: 2
   state: 0
   playerInSight: 0
 --- !u!114 &-2389874508002677427

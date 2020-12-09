@@ -912,7 +912,7 @@ MonoBehaviour:
   speed: 6
   isGrounded: 1
   jumpForce: 5
-  dashSpeedFactor: 5
+  dashSpeedFactor: 6
   dashTime: 0.2
   dashCooling: 1
 --- !u!54 &8656129136155908374

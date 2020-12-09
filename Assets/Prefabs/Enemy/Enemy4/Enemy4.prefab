@@ -101,8 +101,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.77719694, y: 0.7536539, z: 0.7130088}
+  m_Center: {x: -0.017589727, y: -0.28740412, z: 0.023915928}
 --- !u!54 &8390922645502351502
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   isDead: 0
   player: {fileID: 0}
   scareCrow: {fileID: 0}
-  speed: 1
+  speed: 3
   rotateSpeed: 3
   attackSpeed: 2
   attackDistance: 2
@@ -480,6 +480,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9011648103020875539, guid: 8d791e7885d8c11418ff9fcd9552c337,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011648103020875539, guid: 8d791e7885d8c11418ff9fcd9552c337,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011648103020875539, guid: 8d791e7885d8c11418ff9fcd9552c337,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 9011648103021171507, guid: 8d791e7885d8c11418ff9fcd9552c337,
         type: 3}
       propertyPath: m_Name
@@ -583,7 +598,7 @@ PrefabInstance:
     - target: {fileID: 1905171532943867752, guid: 6c4ef0c25e458dd449d1cf38602250be,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.15
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 1905171532943867752, guid: 6c4ef0c25e458dd449d1cf38602250be,
         type: 3}
@@ -624,6 +639,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905171532943867752, guid: 6c4ef0c25e458dd449d1cf38602250be,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.026625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905171532943867752, guid: 6c4ef0c25e458dd449d1cf38602250be,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01912158
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c4ef0c25e458dd449d1cf38602250be, type: 3}

@@ -13,28 +13,17 @@ public class Enemy3Bullet : MonoBehaviour
 
     }
 
-
-
-
-
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if(other.tag=="Player")
         {
             other.gameObject.GetComponent<PlayerHealth>().GetHurt(damage);
             Destroy(gameObject);
-        }else if (other.tag == "Wall" || other.tag == "Floor" || other.tag=="Scarecrow")
+        }
+        if(other.tag=="Wall" || other.tag=="Floor" || other.tag=="Scarecrow")
         {
-
             Destroy(gameObject);
         }
-
-
-
-
     }
-
-
 
 }
