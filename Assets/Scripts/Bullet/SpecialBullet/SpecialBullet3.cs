@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class SpecialBullet3 : BulletBase
 {
-    public float activateCountDown = 0.5f;
-    private void Update()
+    private float hitCountDown=10f;
+    protected override void OnTriggerEnter(Collider other)
     {
-
-        activateCountDown -= Time.deltaTime;
-        if (activateCountDown<=0)
+        if (other.gameObject.tag=="Floor")
         {
             isReady = true;
             rb.velocity = Vector3.zero;
             skill.GetComponent<SkillBase>().CheckBulletAreReady();
         }
     }
-
-
-    protected override void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        //override to do nothing.
+        hitCountDown -= Time.deltaTime;
+        if (hitCountDown <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

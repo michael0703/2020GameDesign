@@ -1168,11 +1168,11 @@ MonoBehaviour:
   bulletAudio: {fileID: 8300000, guid: 1b145bcffd767854fb0c71c37678ebaa, type: 3}
   bulletAudioSp:
   - {fileID: 8300000, guid: 230d59294c9857140b63dd308ea4bd63, type: 3}
+  - {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
+  - {fileID: 8300000, guid: 1df1429981f76644097c7fd47fc5f239, type: 3}
   - {fileID: 8300000, guid: 230d59294c9857140b63dd308ea4bd63, type: 3}
-  - {fileID: 8300000, guid: 230d59294c9857140b63dd308ea4bd63, type: 3}
-  - {fileID: 8300000, guid: 230d59294c9857140b63dd308ea4bd63, type: 3}
-  - {fileID: 8300000, guid: 230d59294c9857140b63dd308ea4bd63, type: 3}
-  - {fileID: 8300000, guid: 230d59294c9857140b63dd308ea4bd63, type: 3}
+  - {fileID: 8300000, guid: 999e9aaa797824c269e534450e81830e, type: 3}
+  - {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
   shootHintPrefab: {fileID: 782548087994771559, guid: 9485e19e157ba4418ab892cc66db1634,
     type: 3}
   shootHint: {fileID: 0}
