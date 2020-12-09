@@ -6,7 +6,6 @@ public class EnemySpecialMovement2 : EnemySpecialMovementBase
 {
     public int damage = 5;
     private float rotateSpeed=90f;
-    public float runningSpeed = 0.6f;
 
     public float attackRadius = 3f;
     private int attackTime = -1;
@@ -49,7 +48,7 @@ public class EnemySpecialMovement2 : EnemySpecialMovementBase
         else
         {
             transform.GetChild(0).GetComponent<Animator>().SetBool("withinRange", false);
-            transform.Translate(Vector3.forward * runningSpeed * Time.deltaTime);
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
 
     }

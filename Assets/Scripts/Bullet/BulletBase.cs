@@ -13,11 +13,18 @@ public class BulletBase : MonoBehaviour
     public bool isReady = false;
     protected GameObject skill;
     protected Rigidbody rb;
+    public GameObject hitEffectPrefab;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.velocity = speedForward * transform.forward + speedUpward * transform.up;
+        Debug.Log("Velocity" + " " + rb.velocity);
+        Debug.Log("speedUpward" + " " + speedUpward);
+        Debug.Log("speedForward" + " " + speedForward);
         rb.AddForce(forceForward * transform.forward + forceUpward * transform.up);
+        Debug.Log("Foward" + " " + transform.forward);
+        Debug.Log("Velocity" + " " + rb.velocity);
+        Debug.Log("Position" + " " + transform.position);
     }
 
     public void AttachToSkill(GameObject _skill)
@@ -33,5 +40,8 @@ public class BulletBase : MonoBehaviour
             skill.GetComponent<SkillBase>().CheckBulletAreReady();
             rb.velocity = Vector3.zero;
         }
+    }
+    void Update(){
+        Debug.Log(transform.position + "   " + rb.velocity + "  "+ Time.deltaTime);
     }
 }

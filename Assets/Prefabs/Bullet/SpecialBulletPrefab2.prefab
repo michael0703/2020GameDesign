@@ -124,9 +124,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedForward: 10
-  speedUpward: 4
+  speedUpward: 0
   forceForward: 0
   forceUpward: 0
   damage: 5
   skillType: 2
   isReady: 0
+  hitEffectPrefab: {fileID: 0}

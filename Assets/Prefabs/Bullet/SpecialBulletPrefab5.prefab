@@ -130,6 +130,7 @@ MonoBehaviour:
   damage: 5
   skillType: 5
   isReady: 0
+  hitEffectPrefab: {fileID: 100000, guid: 23293e986d09e4f429f4f99e536f239b, type: 3}
   isWaitingToActivate: 0
   isReadyToDie: 0
   isCloneBullet: 0

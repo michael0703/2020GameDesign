@@ -18,7 +18,6 @@ public class EnemyState : MonoBehaviour
         GameObject tmp = gameObject.transform.GetChild(0).gameObject;
         foreach(Transform item in tmp.transform)
         {
-            Debug.Log(item.name);
             Renderer tmpp=item.GetComponent<Renderer>();
             if(tmpp!=null)
             {

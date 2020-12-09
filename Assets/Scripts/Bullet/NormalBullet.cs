@@ -11,7 +11,8 @@ public class NormalBullet : BulletBase
     protected override void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag=="Enemy")
-        {
+        {   
+            Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
             other.gameObject.GetComponent<EnemyHealth>().GetHurt(damage);
             if(isFreezed)
             {
@@ -20,7 +21,8 @@ public class NormalBullet : BulletBase
             Destroy(gameObject);
         }
         if(other.gameObject.tag=="Wall" || other.gameObject.tag=="Floor")
-        {
+        {   
+            Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     

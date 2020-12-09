@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429638861313665710}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.88, y: 2.23, z: 1.15}
+  m_LocalPosition: {x: -0.82, y: 2.23, z: 1.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5195630150118346062}
@@ -188,6 +188,8 @@ MonoBehaviour:
   startHealth: 100
   currentHealth: 0
   deadAnim: {fileID: 7400000, guid: b161d64d0b842484a8dfe278b2bc0b7a, type: 3}
+  damagePopUpPrefab: {fileID: 5025605514304171091, guid: 2c0d4bcf3d3b449bb9f5b741121c178b,
+    type: 3}
 --- !u!114 &2144100638452436001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +224,6 @@ MonoBehaviour:
   player: {fileID: 0}
   scareCrow: {fileID: 0}
   speed: 1
-  runningSpeed: 1.5
   shootPoint: {fileID: 782814375}
   enemy3bulletPrefab: {fileID: 7674941216007592066, guid: 716de9a23ed794b27bebf98b3a244bda,
     type: 3}

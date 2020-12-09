@@ -334,12 +334,12 @@ MonoBehaviour:
   isDead: 0
   player: {fileID: 0}
   scareCrow: {fileID: 0}
-  speed: 1
-  dashFactor: 15
+  speed: 2
+  dashFactor: 10
   rotateSpeed: 10
   chargingTime: 2
   dashingTime: 1
-  coolingTime: 3
+  coolingTime: 2
   state: 0
   playerInSight: 0
 --- !u!114 &-2389874508002677427
@@ -371,6 +371,8 @@ MonoBehaviour:
   startHealth: 100
   currentHealth: 0
   deadAnim: {fileID: 7400000, guid: 8cf19caeee9bb3c43a09d57a2a2ba09d, type: 2}
+  damagePopUpPrefab: {fileID: 5025605514304171091, guid: 2c0d4bcf3d3b449bb9f5b741121c178b,
+    type: 3}
 --- !u!114 &1950858807
 MonoBehaviour:
   m_ObjectHideFlags: 0

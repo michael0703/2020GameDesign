@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemySpecialMovement3 : EnemySpecialMovementBase
 {
     private float rotateSpeed = 90f;
-    public float runningSpeed = 1.5f;
     public Transform shootPoint;
     public GameObject enemy3bulletPrefab;
 
@@ -49,8 +48,7 @@ public class EnemySpecialMovement3 : EnemySpecialMovementBase
         else
         {
             transform.GetChild(0).GetComponent<Animator>().SetBool("withinRange", false);
-
-            transform.Translate(Vector3.forward*runningSpeed*Time.deltaTime);
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
 
     }

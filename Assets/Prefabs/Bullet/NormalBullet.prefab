@@ -130,6 +130,7 @@ MonoBehaviour:
   damage: 5
   skillType: -1
   isReady: 0
+  hitEffectPrefab: {fileID: 100000, guid: 23293e986d09e4f429f4f99e536f239b, type: 3}
   isFreezed: 0
   effectTime: 0
   slowArgument: 0

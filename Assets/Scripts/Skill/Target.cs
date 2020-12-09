@@ -54,6 +54,7 @@ public class Target : MonoBehaviour
         isActive = true;
 
         GameObject explosion = (GameObject)Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        explosion.transform.localScale *= 1.25f;
         if(isFreeze)
         {
             ParticleSystem.MainModule settings = explosion.GetComponent<ParticleSystem>().main;
