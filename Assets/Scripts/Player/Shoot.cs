@@ -26,7 +26,7 @@ public class Shoot : MonoBehaviour
     private float [] coolOfSkill;
     public float [] coolCounting = {0,0,0,0,0,0};
     private AudioSource audioSource;
-
+    public AudioClip switchGun;
     private GameObject skillManager;
     private GameObject mainCamera;
     Animator animator;
@@ -129,23 +129,27 @@ public class Shoot : MonoBehaviour
         float mouseScroll = Input.GetAxis("Mouse ScrollWheel");
         if(mouseScroll<0)
         {
+            audioSource.PlayOneShot(switchGun);
             animator.Play("BulletSwitch_v1");
             currentSkillType = (currentSkillType+1)%numOfSkillType;
         }
         if(mouseScroll>0)
         {
+            audioSource.PlayOneShot(switchGun);
             animator.Play("BulletSwitch_v1");
             currentSkillType--;
             currentSkillType = (currentSkillType>=0)? currentSkillType: numOfSkillType-1;
         }
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
+            audioSource.PlayOneShot(switchGun);
             DestroyShootingHint();
             animator.Play("BulletSwitch_v1");
             currentSkillType = 0;
         }
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {   
+            audioSource.PlayOneShot(switchGun);
             DestroyShootingHint();
             ShowShootingHint(1);
             animator.Play("BulletSwitch_v1");
@@ -153,6 +157,7 @@ public class Shoot : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Alpha3))
         {   
+            audioSource.PlayOneShot(switchGun);
             DestroyShootingHint();
             ShowShootingHint(2);
             animator.Play("BulletSwitch_v1");
@@ -160,18 +165,21 @@ public class Shoot : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Alpha4))
         {   
+            audioSource.PlayOneShot(switchGun);
             DestroyShootingHint();
             animator.Play("BulletSwitch_v1");
             currentSkillType = 3;
         }
         if(Input.GetKeyDown(KeyCode.Alpha5))
         {
+            audioSource.PlayOneShot(switchGun);
             DestroyShootingHint();
             animator.Play("BulletSwitch_v1");
             currentSkillType = 4;
         }
         if(Input.GetKeyDown(KeyCode.Alpha6))
         {
+            audioSource.PlayOneShot(switchGun);
             DestroyShootingHint();
             animator.Play("BulletSwitch_v1");
             currentSkillType = 5;
