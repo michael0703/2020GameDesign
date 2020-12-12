@@ -21,7 +21,7 @@ public class EnemySpecialMovementTemplate : EnemySpecialMovementBase
 
         float dist = Vector3.Distance(target.transform.position, transform.position);
         if (dist > attack_range){
-            cooldown_countdown = 0f;
+            cooldown_countdown = 3f;
             animator.SetBool("object_outofrange", true);
             rb.velocity = transform.forward * speed;
         }
