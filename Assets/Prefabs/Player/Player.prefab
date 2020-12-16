@@ -1173,13 +1173,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 230d59294c9857140b63dd308ea4bd63, type: 3}
   - {fileID: 8300000, guid: 999e9aaa797824c269e534450e81830e, type: 3}
   - {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
+  switchGun: {fileID: 8300000, guid: c92b01a44137c4fbaa8af112cbf01734, type: 3}
+  shootVolumn: 0.01
+  shootVolumnSp:
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  - 0.01
+  switchVolumn: 0.01
   shootHintPrefab: {fileID: 782548087994771559, guid: 9485e19e157ba4418ab892cc66db1634,
     type: 3}
   shootHint: {fileID: 0}
   hintForward: 00000000080000000a000000000000000000000000000000
   hintIndex: 0
   currentSkillType: 0
-  fireVFXPrefab: {fileID: 8656129136515331295}
   coolCounting:
   - 0
   - 0
@@ -1187,7 +1196,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  switchGun: {fileID: 8300000, guid: c92b01a44137c4fbaa8af112cbf01734, type: 3}
+  fireVFXPrefab: {fileID: 8656129136515331295}
 --- !u!82 &6485707719602647712
 AudioSource:
   m_ObjectHideFlags: 0
