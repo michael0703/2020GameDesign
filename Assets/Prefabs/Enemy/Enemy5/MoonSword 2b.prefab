@@ -9628,3 +9628,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAttacking: 0
   isReadyToDie: 0
+  damage: 5

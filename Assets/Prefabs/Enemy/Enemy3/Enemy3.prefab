@@ -103,7 +103,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2856261967113854588
 MonoBehaviour:
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b8f9ab6c2c92f40a0f441f74902206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 100
+  startHealth: 50
   currentHealth: 0
   deadAnim: {fileID: 7400000, guid: b161d64d0b842484a8dfe278b2bc0b7a, type: 3}
   damagePopUpPrefab: {fileID: 5025605514304171091, guid: 2c0d4bcf3d3b449bb9f5b741121c178b,
@@ -227,7 +227,7 @@ MonoBehaviour:
   shootPoint: {fileID: 782814375}
   enemy3bulletPrefab: {fileID: 7674941216007592066, guid: 716de9a23ed794b27bebf98b3a244bda,
     type: 3}
-  attackRadius: 10
+  attackRadius: 20
 --- !u!114 &8731315564728126453
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,11 @@ public class Skill4 : SkillBase
     {
         GameObject target = (GameObject)Instantiate(targetPrefab, bullets[0].transform.position, Quaternion.identity);
         if(followEnemy != null)
+        {
             target.transform.parent = followEnemy.transform;
+            target.GetComponent<Target>().followEnemy=followEnemy;
+        }
+            
         DestroySkill();  
     }
 }

@@ -43,7 +43,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2856261967113854588
 MonoBehaviour:
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b8f9ab6c2c92f40a0f441f74902206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 500
+  startHealth: 300
   currentHealth: 0
   deadAnim: {fileID: 7400000, guid: d3aad3207f5c7984a878d6d3e713003f, type: 2}
   damagePopUpPrefab: {fileID: 5025605514304171091, guid: 2c0d4bcf3d3b449bb9f5b741121c178b,
@@ -163,7 +163,7 @@ MonoBehaviour:
   player: {fileID: 0}
   scareCrow: {fileID: 0}
   speed: 1.5
-  damage: 5
+  damage: 10
   attackRadius: 3
 --- !u!114 &-5312709462318004691
 MonoBehaviour:

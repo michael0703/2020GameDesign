@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b8f9ab6c2c92f40a0f441f74902206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 20
+  startHealth: 25
   currentHealth: 0
   deadAnim: {fileID: 7400000, guid: 625e74d907dc48042baa437dc4090641, type: 3}
   damagePopUpPrefab: {fileID: 5025605514304171091, guid: 2c0d4bcf3d3b449bb9f5b741121c178b,
@@ -173,7 +173,7 @@ MonoBehaviour:
   rotateSpeed: 3
   attackSpeed: 2
   attackDistance: 2
-  damage: 5
+  damage: 3
   noiseWalkLasting: 1
 --- !u!114 &4494976113777295707
 MonoBehaviour:
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMovable: 1
-  freezeMaterial: {fileID: 0}
+  freezeMaterial: {fileID: 2100000, guid: e1d831a46ac934b42aa1a7972bf57d60, type: 2}
 --- !u!1 &6663073349256829911
 GameObject:
   m_ObjectHideFlags: 0
