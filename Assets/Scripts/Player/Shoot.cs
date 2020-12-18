@@ -147,6 +147,13 @@ public class Shoot : MonoBehaviour
             audioSource.PlayOneShot(switchGun);
             animator.Play("BulletSwitch_v1");
             currentSkillType = (currentSkillType+1)%numOfSkillType;
+            if (currentSkillType == 1 || currentSkillType == 2){
+                DestroyShootingHint();
+                ShowShootingHint(currentSkillType);
+            }
+            else{
+                DestroyShootingHint();
+            }
         }
         if(mouseScroll>0)
         {
@@ -154,6 +161,13 @@ public class Shoot : MonoBehaviour
             animator.Play("BulletSwitch_v1");
             currentSkillType--;
             currentSkillType = (currentSkillType>=0)? currentSkillType: numOfSkillType-1;
+            if (currentSkillType == 1 || currentSkillType == 2){
+                DestroyShootingHint();
+                ShowShootingHint(currentSkillType);
+            }
+            else{
+                DestroyShootingHint();
+            }
         }
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
