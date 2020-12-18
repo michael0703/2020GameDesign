@@ -7,6 +7,7 @@ public class SwordMove : MonoBehaviour
     // Start is called before the first frame update
     public bool isAttacking = false;
     public bool isReadyToDie = false;
+    public int damage = 10;
     float speed = 10f;
     void Start()
     {
@@ -28,7 +29,7 @@ public class SwordMove : MonoBehaviour
             speed = 0f;
             isReadyToDie = true;
             GameObject player = GameObject.Find("/Player");
-            player.GetComponent<PlayerHealth>().GetHurt(10);
+            player.GetComponent<PlayerHealth>().GetHurt(damage);
             
         }
         if(other.gameObject.tag=="Wall" || other.gameObject.tag=="Floor")

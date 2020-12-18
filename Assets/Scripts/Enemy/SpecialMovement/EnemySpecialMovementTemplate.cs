@@ -5,8 +5,10 @@ using UnityEngine;
 public class EnemySpecialMovementTemplate : EnemySpecialMovementBase
 {   
     public float rotateSpeed = 3f;
-    public float cooldown_countdown = 0f;
+    public float cooldown = 3f;
     public float attack_range = 2f;
+    
+    private float cooldown_countdown;
     private Animator animator;
     public int damage = 5;
     protected override void Start()
@@ -16,12 +18,13 @@ public class EnemySpecialMovementTemplate : EnemySpecialMovementBase
     }
     protected override void specialMove(GameObject target)
     {   
+        cooldown_countdown -= Time.deltaTime;
         animator.SetBool("isDetect", true);
         lookAtPlayer(target);
 
         float dist = Vector3.Distance(target.transform.position, transform.position);
         if (dist > attack_range){
-            cooldown_countdown = 3f;
+            cooldown_countdown = cooldown;
             animator.SetBool("object_outofrange", true);
             rb.velocity = transform.forward * speed;
         }
@@ -43,11 +46,8 @@ public class EnemySpecialMovementTemplate : EnemySpecialMovementBase
     void attack(GameObject target){
         if (cooldown_countdown <= 0){
             animator.Play("Attack01");
-            cooldown_countdown = 5f;
+            cooldown_countdown = cooldown;
             target.GetComponent<PlayerHealth>().GetHurt(damage);
-        }
-        else{
-            cooldown_countdown -= Time.deltaTime;
         }
     }
 

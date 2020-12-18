@@ -213,8 +213,8 @@ MonoBehaviour:
   scareCrow: {fileID: 0}
   speed: 2
   rotateSpeed: 3
-  cooldown_countdown: 0
-  attack_range: 2
+  cooldown: 2
+  attack_range: 1.5
   damage: 5
 --- !u!114 &3623522415492260487
 MonoBehaviour:

@@ -7,6 +7,8 @@ public class Target : MonoBehaviour
     public float lastingTime = 5f;
     public GameObject explosionPrefab;
     public Material freezeMaterial;
+    public GameObject followEnemy;
+    public int damage = 5;
 
     private GameObject bombArea;
     private float counting;
@@ -43,6 +45,7 @@ public class Target : MonoBehaviour
     {
         if(other.gameObject.tag=="NormalBullet")
         {
+            if(followEnemy!=null) followEnemy.GetComponent<EnemyHealth>().GetHurt(damage);
             NormalBullet sc = other.gameObject.GetComponent<NormalBullet>();
             ActivateArea(sc.isFreezed, sc.effectTime, sc.slowArgument);
             Destroy(other.gameObject);
