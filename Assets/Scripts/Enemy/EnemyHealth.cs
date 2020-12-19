@@ -37,7 +37,7 @@ public class EnemyHealth : MonoBehaviour
                 damagePos.y += Random.Range(-0.2f, 0.2f);
                 GameObject dmgPop = (GameObject)Instantiate(damagePopUpPrefab, damagePos, Quaternion.identity);
                 dmgPop.GetComponent<TextMeshPro>().SetText(damage.ToString());
-                dmgPop.GetComponent<TextMeshPro>().fontSize = 3 * (1f + (damage / 5f) * 0.01f);
+                dmgPop.GetComponent<TextMeshPro>().fontSize *= (1f + ((damage-5f) / 5f) * 0.2f);
                 dmgPop.transform.rotation = healthbar.transform.rotation;
             }
         }
