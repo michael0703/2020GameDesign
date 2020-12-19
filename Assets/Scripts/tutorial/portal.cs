@@ -19,7 +19,7 @@ public class portal : MonoBehaviour
         if (other.tag == "Player"){
             
             
-            Debug.Log("Need to teleport");
+            //Debug.Log("Need to teleport");
             GameObject transportObj = transform.GetChild(0).gameObject;
             Vector3 newPos = transportObj.transform.position;
             other.transform.position = new Vector3(newPos.x, newPos.y, newPos.z);

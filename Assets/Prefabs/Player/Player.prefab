@@ -1176,12 +1176,12 @@ MonoBehaviour:
   switchGun: {fileID: 8300000, guid: c92b01a44137c4fbaa8af112cbf01734, type: 3}
   shootVolumn: 0.01
   shootVolumnSp:
-  - 0.01
-  - 0.01
-  - 0.01
-  - 0.01
-  - 0.01
-  - 0.01
+  - 0.03
+  - 0.03
+  - 0.02
+  - 0.04
+  - 0.04
+  - 0.04
   switchVolumn: 0.01
   shootHintPrefab: {fileID: 782548087994771559, guid: 9485e19e157ba4418ab892cc66db1634,
     type: 3}
