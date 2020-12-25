@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5513279574347984441}
   - component: {fileID: 3163970792786346194}
   m_Layer: 0
-  m_Name: Lamp_03
+  m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,7 +129,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
