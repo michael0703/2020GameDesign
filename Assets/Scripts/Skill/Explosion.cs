@@ -30,14 +30,26 @@ public class Explosion : MonoBehaviour
                 if (collider.gameObject.tag == "Enemy")
                 {
 
-                    //Debug.Log("damage by explosion.");
-                    collider.GetComponent<EnemyHealth>().GetHurt(damage);
+                    Vector3 direction=(collider.transform.position - transform.position);
 
-                    if (collider.GetComponent<EnemyState>().isMovable)
+
+                    int layerMask = 1 << 8;
+                    RaycastHit hit;
+                    if (Physics.Raycast(transform.position-direction.normalized*0.5f, direction, out hit, direction.magnitude, layerMask))
                     {
-                        //Debug.Log("move");
-                        Vector3 blownDirection = collider.transform.position - transform.position;
-                        collider.GetComponent<Rigidbody>().AddForce(blownDirection.normalized * 900);
+                        //blocked by wall.
+                    }
+                    else
+                    {
+                        Debug.Log("hit");
+                        //Debug.Log("damage by explosion.");
+                        collider.GetComponent<EnemyHealth>().GetHurt(damage);
+
+                        if (collider.GetComponent<EnemyState>().isMovable)
+                        {
+                            //Debug.Log("move");
+                            collider.GetComponent<Rigidbody>().AddForce(direction.normalized * 900);
+                        }
                     }
 
 
