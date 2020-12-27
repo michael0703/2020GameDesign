@@ -20,21 +20,10 @@ public class BuildingsEnemiesActivator : MonoBehaviour
     {
         for(int i = 0; i < 4; i++)
         {
-            if (i == index )
+            if (i == index|| i == index + 1)
             {
                 buildings.transform.GetChild(i).gameObject.SetActive(true);
                 enemies.transform.GetChild(i).gameObject.SetActive(true);
-
-                buildings.transform.GetChild(i).GetChild(3).gameObject.SetActive(true);
-
-            }
-            else if(i == index + 1)
-            {
-                buildings.transform.GetChild(i).gameObject.SetActive(true);
-                enemies.transform.GetChild(i).gameObject.SetActive(true);
-
-                buildings.transform.GetChild(i).GetChild(3).gameObject.SetActive(false);
-
 
             }
             else

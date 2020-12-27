@@ -35,13 +35,14 @@ public class Explosion : MonoBehaviour
 
                     int layerMask = 1 << 8;
                     RaycastHit hit;
-                    if (Physics.Raycast(transform.position-direction.normalized*0.5f, direction, out hit, direction.magnitude, layerMask))
+                    if (Physics.Raycast(transform.position-direction.normalized*0.2f, direction, out hit, direction.magnitude, layerMask))
                     {
+                        Debug.Log("blocked"+hit.transform.gameObject);
                         //blocked by wall.
                         if (hit.transform.gameObject.tag == "Floor" && (hit.point - transform.position).magnitude < 0.5)
                         {
                             collider.GetComponent<EnemyHealth>().GetHurt(damage);
-
+                            Debug.Log("still hit");
                             if (collider.GetComponent<EnemyState>().isMovable)
                             {
                                 //Debug.Log("move");

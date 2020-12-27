@@ -37,7 +37,10 @@ public class EnemySpecialMovement4 : EnemySpecialMovementBase
         rb.velocity = speed * (transform.forward + 0.2f * noiseWalkPattern * transform.right);
 
         Vector3 difference=target.transform.position - transform.position;
-        difference.y = 0;
+        if (System.Math.Abs(difference.y) < 1)
+        {
+            difference.y = 0;
+        }
         if (difference.magnitude < attackDistance)
         {
             rb.velocity = Vector3.zero;

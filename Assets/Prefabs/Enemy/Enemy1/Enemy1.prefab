@@ -214,7 +214,7 @@ MonoBehaviour:
   speed: 2
   rotateSpeed: 3
   cooldown: 2
-  attack_range: 1.5
+  attack_range: 1.3
   damage: 5
 --- !u!114 &3623522415492260487
 MonoBehaviour:
