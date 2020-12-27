@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class setHint : MonoBehaviour
-{   
+{
+    [TextArea]
     public string hintMsg;
     GameObject tutorialBar;
     // Start is called before the first frame update
     void Start()
     {
-        tutorialBar = GameObject.Find("/TutorialArea/exampleHint");
+        tutorialBar = GameObject.Find("/Canvas/exampleHint");
     }
 
     // Update is called once per frame
@@ -22,14 +24,14 @@ public class setHint : MonoBehaviour
     void OnTriggerEnter(Collider other){
         if (other.tag == "Player"){
             
-            tutorialBar.GetComponent<TextMeshPro>().SetText(hintMsg);
+            tutorialBar.GetComponent<Text>().text=hintMsg;
             //Debug.Log("Show Hint Message  " + hintMsg);
         }
     }
     void OnTriggerExit(Collider other){
         if (other.tag == "Player"){
 
-            tutorialBar.GetComponent<TextMeshPro>().SetText("");
+            tutorialBar.GetComponent<Text>().text = "";
             //Debug.Log("Clear Message");
         }
 

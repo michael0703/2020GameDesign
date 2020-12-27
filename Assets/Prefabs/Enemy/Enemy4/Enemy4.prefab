@@ -134,7 +134,7 @@ MonoBehaviour:
   startHealth: 25
   currentHealth: 0
   deadAnim: {fileID: 7400000, guid: 625e74d907dc48042baa437dc4090641, type: 3}
-  damagePopUpPrefab: {fileID: 6515686856137679245, guid: 9683a8388f3c24acc8e4a07d3d97b6b6,
+  damagePopUpPrefab: {fileID: 5025605514304171091, guid: 2c0d4bcf3d3b449bb9f5b741121c178b,
     type: 3}
 --- !u!114 &-5184077048952226209
 MonoBehaviour:
