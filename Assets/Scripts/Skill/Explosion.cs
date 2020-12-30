@@ -30,14 +30,36 @@ public class Explosion : MonoBehaviour
                 if (collider.gameObject.tag == "Enemy")
                 {
 
-                    //Debug.Log("damage by explosion.");
-                    collider.GetComponent<EnemyHealth>().GetHurt(damage);
+                    Vector3 direction=(collider.transform.position - transform.position);
 
-                    if (collider.GetComponent<EnemyState>().isMovable)
+
+                    int layerMask = 1 << 8;
+                    RaycastHit hit;
+                    if (Physics.Raycast(transform.position-direction.normalized*0.2f, direction, out hit, direction.magnitude, layerMask))
                     {
-                        //Debug.Log("move");
-                        Vector3 blownDirection = collider.transform.position - transform.position;
-                        collider.GetComponent<Rigidbody>().AddForce(blownDirection.normalized * 900);
+                        Debug.Log("blocked"+hit.transform.gameObject);
+                        //blocked by wall.
+                        if (hit.transform.gameObject.tag == "Floor" && (hit.point - transform.position).magnitude < 0.5)
+                        {
+                            collider.GetComponent<EnemyHealth>().GetHurt(damage);
+                            Debug.Log("still hit");
+                            if (collider.GetComponent<EnemyState>().isMovable)
+                            {
+                                //Debug.Log("move");
+                                collider.GetComponent<Rigidbody>().AddForce(direction.normalized * 900);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        //Debug.Log("damage by explosion.");
+                        collider.GetComponent<EnemyHealth>().GetHurt(damage);
+
+                        if (collider.GetComponent<EnemyState>().isMovable)
+                        {
+                            //Debug.Log("move");
+                            collider.GetComponent<Rigidbody>().AddForce(direction.normalized * 900);
+                        }
                     }
 
 

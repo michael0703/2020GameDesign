@@ -4805,6 +4805,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1300869647}
     m_Modifications:
+    - target: {fileID: 5023171821872406874, guid: a341240a41e45774b9c6090d6fdfac18,
+        type: 3}
+      propertyPath: attackRadius
+      value: 2.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5195630150118346062, guid: a341240a41e45774b9c6090d6fdfac18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6312,7 +6317,7 @@ PrefabInstance:
     - target: {fileID: 5023171821872406874, guid: a341240a41e45774b9c6090d6fdfac18,
         type: 3}
       propertyPath: attackRadius
-      value: 2.5
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 5195630150118346062, guid: a341240a41e45774b9c6090d6fdfac18,
         type: 3}

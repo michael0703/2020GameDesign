@@ -21,6 +21,7 @@ public class DetectPlayer : MonoBehaviour
         }
 
     }
+    /*
     private void OnTriggerStay(Collider other)
     {
         if(other.gameObject.tag=="Player")
@@ -31,6 +32,6 @@ public class DetectPlayer : MonoBehaviour
             enemy.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("isDetect", true); 
         }
 
-    }
+    }*/
 
 }

@@ -30,11 +30,37 @@ public class BombArea : MonoBehaviour
     {
         if(other.gameObject.tag == "Enemy")
         {
-            other.gameObject.GetComponent<EnemyHealth>().GetHurt(damage);
-            if(if_)
+
+            Vector3 direction = (other.transform.position - transform.position);
+            int layerMask = 1 << 8;
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position - direction.normalized * 0.2f, direction, out hit, direction.magnitude, layerMask))
             {
-                other.gameObject.GetComponent<EnemyState>().SlowDown(et,sa);
+                //blocked by wall.
+                if (hit.transform.gameObject.tag == "Floor" && (hit.point - transform.position).magnitude < 0.5)
+                {
+
+                    other.gameObject.GetComponent<EnemyHealth>().GetHurt(damage);
+                    if (if_)
+                    {
+                        other.gameObject.GetComponent<EnemyState>().SlowDown(et, sa);
+                    }
+
+                }
             }
+            else
+            {
+
+                other.gameObject.GetComponent<EnemyHealth>().GetHurt(damage);
+                if (if_)
+                {
+                    other.gameObject.GetComponent<EnemyState>().SlowDown(et, sa);
+                }
+            }
+
+
+
+
         }
     }
 }

@@ -164,7 +164,7 @@ MonoBehaviour:
   scareCrow: {fileID: 0}
   speed: 1.5
   damage: 10
-  attackRadius: 3
+  attackRadius: 2.1
 --- !u!114 &-5312709462318004691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,8 +190,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5, y: 4, z: 1.5}
-  m_Center: {x: 0, y: 2, z: 0.3}
+  m_Size: {x: 4.5, y: 4, z: 3.5}
+  m_Center: {x: 0, y: 2, z: 0.55}
 --- !u!1001 &5469445653915421148
 PrefabInstance:
   m_ObjectHideFlags: 0

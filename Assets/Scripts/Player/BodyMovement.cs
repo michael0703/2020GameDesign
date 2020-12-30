@@ -28,7 +28,17 @@ public class BodyMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 direction = (transform.right * x + transform.forward * z).normalized;
-        rb.MovePosition(transform.position + direction * speed * Time.deltaTime);
+        float limit = transform.GetChild(3).gameObject.GetComponent<DashDetect>().Dash(speed * Time.deltaTime, direction);
+
+        if (limit < speed * Time.deltaTime)
+        {
+            rb.MovePosition(transform.position + direction *limit);
+
+        }
+        else
+        {
+            rb.MovePosition(transform.position + direction * speed * Time.deltaTime);
+        }
         // Vector3 movement = (transform.right * x + transform.forward * z) * speed;      
         // movement.y = rb.velocity.y;
         // rb.velocity = movement;

@@ -7,7 +7,7 @@ public class EnemySpecialMovement2 : EnemySpecialMovementBase
     public int damage = 5;
     private float rotateSpeed=90f;
 
-    public float attackRadius = 3f;
+    public float attackRadius = 2f;
     private int attackTime = -1;
 
 
@@ -24,6 +24,7 @@ public class EnemySpecialMovement2 : EnemySpecialMovementBase
             attackTime = -1;
         }
 
+        difference = target.transform.position - transform.position;
         if (difference.magnitude < attackRadius)
         {
             transform.GetChild(0).GetComponent<Animator>().SetBool("withinRange", true);
