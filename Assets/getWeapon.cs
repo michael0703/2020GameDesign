@@ -10,7 +10,7 @@ public class getWeapon : MonoBehaviour
     private bool taken = false;
     private void OnTriggerEnter(Collider other)
     {
-        if (!taken && other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             GlobalVar globalVar = GameObject.Find("GlobalVar").GetComponent<GlobalVar>();
             for (int i = 0; i < 6; i++)
@@ -19,7 +19,9 @@ public class getWeapon : MonoBehaviour
             }
             other.transform.position = new Vector3(10f, 1.3f, -43f);
             text.text = "Zero Cooldown";
-            Destroy(text, 3f);
+            if(!taken){
+              Destroy(text, 3f);
+            }
             taken = true;
         }
     }

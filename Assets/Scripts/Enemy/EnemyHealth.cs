@@ -48,12 +48,17 @@ public class EnemyHealth : MonoBehaviour
         //Debug.Log("Enemy health: " + currentHealth);
         if(currentHealth <= 0)
         {   
-            gameObject.GetComponent<EnemyMovement>().isDead = true;
-            gameObject.GetComponent<EnemySpecialMovementBase>().isDead = true;
-            gameObject.tag = "Untagged";
-            anim.Play("dead");
-            levelManager.GetComponent<LevelManager>().EnemyDie();
-            Destroy(gameObject, deadAnim.length);
+            if (gameObject.GetComponent<EnemyMovement>().isDead){
+                Debug.Log("Already dead");
+            }
+            else{
+                gameObject.GetComponent<EnemyMovement>().isDead = true;
+                gameObject.GetComponent<EnemySpecialMovementBase>().isDead = true;
+                gameObject.tag = "Untagged";
+                anim.Play("dead");
+                levelManager.GetComponent<LevelManager>().EnemyDie();
+                Destroy(gameObject, deadAnim.length);
+            }
         }
         else
         {
